@@ -8,7 +8,7 @@ To use this repository:
   3. Solve the algo
   4. Push the solution to your newly created branch!
 
-The idea is to keep those green little boxes on your GitHub profile happy while also increasing your algo knowledge. It's a win-win!
+The idea is to keep those green little boxes on your GitHub profile happy while also increasing your DSA knowledge. It's a win-win!
 
 I've just created this repository and will be adding new problems to it each day. If you have any good ones you'd like to include, request a PR and I'll probably approve it
 
