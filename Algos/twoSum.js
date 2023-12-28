@@ -5,4 +5,3 @@ elements' values sum to the passed in target value
 Extra credit: try to solve it in O(n) time complexity!
 */
 
-//O(n^2) time complexity
