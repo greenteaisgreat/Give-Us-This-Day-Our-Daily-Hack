@@ -5,7 +5,7 @@ numeric position is entered as an argument
 Extra credit: try to solve it in O(n) time complexity!
 */
 
-// O(n^2) time complexity
+// O(2^n) time complexity
 const fib = (n) => {
   if (n <= 1) return n === 1 ? 1 : 0;
 
