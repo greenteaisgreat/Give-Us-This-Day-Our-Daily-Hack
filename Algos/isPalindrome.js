@@ -1,0 +1,4 @@
+/*
+Create an algorithm that returns true or false if the passed in
+argument is a palindrome
+*/
