@@ -1,5 +1,5 @@
 # Give-Us-This-Day-Our-Daily-Hack
-A repository for solving common DSA interview-style problems every day!
+A repository for solving common JavaScript DSA interview-style problems every day!
 
 To use this repository:
 
