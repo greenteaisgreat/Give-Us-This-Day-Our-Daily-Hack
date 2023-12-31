@@ -26,5 +26,3 @@ const fibTail = (n, a = 0, b = 1) => {
 console.time('fibTail');
 console.log(fibTail(300));
 console.timeEnd('fibTail');
-
-
