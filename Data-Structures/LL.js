@@ -1,7 +1,13 @@
 /*
-Create a singly Linked List that includes two methods:
-  1.) add
-  2.) delete
+Create a singly Linked List that includes eight methods:
+  1.) push
+  2.) pop
+  3.) shift
+  4.) unshift
+  5.) get
+  6.) set
+  7.) insert
+  8.) remove
 */
 
 function LL() {
@@ -31,7 +37,28 @@ LL.prototype.push = function(val) {
   return ++this.length;
 }
 
-LL.prototype.pop
+LL.prototype.pop = function() {
+  if (!this.head) throw new Error('The Linked List is empty');
+
+  let curr = this.head;
+  let newTail = curr;
+
+  while (curr.next) {
+    newTail = curr;
+    curr = curr.next;
+  }
+
+  this.tail = newTail;
+  this.tail.next = null;
+  this.length--;
+
+  if (this.length <= 0) {
+    this.head = null;
+    this.tail = null;
+  }
+
+  return curr;
+}
 
 const test = new LL();
 
@@ -39,4 +66,6 @@ test.push(1);
 test.push(2);
 test.push(3);
 test.push(4);
+test.pop();
+test.pop();
 console.log(test);
