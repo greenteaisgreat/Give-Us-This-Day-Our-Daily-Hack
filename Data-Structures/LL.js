@@ -6,6 +6,7 @@ Create a singly Linked List that includes two methods:
 
 function LL() {
   this.head = null;
+  this.tail = null;
   this.length = 0;
 }
 
@@ -14,23 +15,28 @@ function Node(val) {
   this.next = null;
 }
 
-LL.prototype.add = function(val) {
+LL.prototype.push = function(val) {
   const newNode = new Node(val);
 
   if (!this.head) {
     this.head = newNode;
-    return this.length++;
+    this.tail = this.head;
   }
 
-  while (!curr.next) {
-    curr = curr.next;
+  else {
+    this.tail.next = newNode; //assignment to the end of the actual LL
+    this.tail = newNode; //assignment to the separate tail property that indicates the last value
   }
 
-  curr = newNode;
-  return this.length++;
+  return ++this.length;
 }
 
-const list = new LL();
+LL.prototype.pop
 
-list.add(5);
-console.log(list);
+const test = new LL();
+
+test.push(1);
+test.push(2);
+test.push(3);
+test.push(4);
+console.log(test);
