@@ -44,3 +44,85 @@ Note:
 The index i provided to get(int i) and set(int i) is guranteed to be greater than or equal to 0 and less than the number of elements in the array.
 
 */
+
+class DynamicArray {
+  /**
+   * @constructor
+   * @param {number} capacity
+   */
+  constructor(capacity) {
+    this.array = Array.from(Array(capacity)); //Initializes an array with 'capacity' undefined positions
+  }
+
+  /**
+   * @param {number} i
+   * @returns {number}
+   */
+  get(i) {
+    return this.array[i];
+  }
+
+	/**
+	 * @param {number} i
+	 * @param {number} n
+	 * @returns {void}
+	 */
+  set(i, n) {
+   this.array[i] = n;
+   return;
+  }
+
+	/**
+	 * @param {number} n
+	 * @returns {void}
+	 */
+  pushback(n) {
+   if (!this.array.includes(undefined)) {
+    this.resize(); //NOT this.array.resize(); this.array is already in resize()
+		this.array[this.getSize()] = n; //pushes the value onto the first available open spot after resize
+		return;
+  }
+  this.array[this.getSize()] = n;
+  return;
+}
+
+  /**
+   * @returns {number}
+   */
+  popback() {
+		const popped = this.array[this.getSize() - 1];
+		this.array[this.getSize() - 1] = undefined;
+		return popped;
+  }
+
+  /**
+   * @returns {void}
+   */
+  resize() {
+    this.array.push(...Array(this.array.length));
+    return;
+  }
+
+	/**
+	 * @returns {number}
+	 */
+	getSize() {
+		let count = 0;
+		this.array.forEach(num => Number.isInteger(num) ? count++ : null); //checks for 0's to not be falsy
+		return count;
+	}
+
+	/**
+	 * @returns {number}
+	 */
+	getCapacity() {
+		return this.array.length;
+	}
+}
+
+const test = new DynamicArray(4);
+test.pushback(1)
+test.set(0, 0);
+test.pushback(2);
+console.log(test)
+console.log(test.get(0));
