@@ -27,3 +27,20 @@ Constraints:
 
 */
 
+/**
+ * @param {string} str1
+ * @param {string} str2
+ * @return {string}
+ */
+const gcdOfStrings = function(str1, str2) {
+  if (str1 + str2 !== str2 + str1) return '';
+
+  return str1 === str2 ? str1
+      : str1.length > str2.length ? gcdOfStrings(str1.substring(str2.length), str2)
+      : gcdOfStrings(str2.substring(str1.length), str1);
+};
+
+const word1 = 'ABABABAB';
+const word2 = 'ABAB';
+
+console.log(gcdOfStrings(word1, word2));
