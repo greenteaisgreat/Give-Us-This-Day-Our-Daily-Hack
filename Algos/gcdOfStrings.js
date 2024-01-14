@@ -40,7 +40,7 @@ const gcdOfStrings = function(str1, str2) {
       : gcdOfStrings(str2.substring(str1.length), str1);
 };
 
-const word1 = 'ABABABAB';
+const word1 = 'ABABAB';
 const word2 = 'ABAB';
 
 console.log(gcdOfStrings(word1, word2));
