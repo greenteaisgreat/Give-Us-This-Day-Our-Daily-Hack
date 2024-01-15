@@ -48,5 +48,12 @@ Constraints:
  * @returns {Boolean[]}
  */
 const kidsWithCandies = (candies, extraCandies) => {
-  
+  const highestNum = Math.max(...candies);
+
+  return candies.map(candy => candy + extraCandies >= highestNum ? true : false);
 }
+
+const candyArr = [5, 2, 1, 6, 4];
+const extraCandy = 3;
+
+console.log(kidsWithCandies(candyArr, extraCandy));
