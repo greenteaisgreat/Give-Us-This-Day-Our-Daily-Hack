@@ -14,7 +14,7 @@ Users that perform an excessive amount of transactions might be abusing the serv
 the users that have a number of transactions over a threshold. The list of user ids should be ordered in ascending numeric value.
 
 Example
-logs = ["88 99 200", "88 99 300", "99 32 100", " 12 12 15"]
+logs = ["88 99 200", "88 99 300", "99 32 100", "12 12 15"]
 threshold = 2
 
 The transactions count for each user, regardless of role are:
