@@ -14,7 +14,7 @@ Users that perform an excessive amount of transactions might be abusing the serv
 the users that have a number of transactions over a threshold. The list of user ids should be ordered in ascending numeric value.
 
 Example
-logs = ["88 99 200", "88 99 300", "99 32 100", " 12 12 15"]
+logs = ["88 99 200", "88 99 300", "99 32 100", "12 12 15"]
 threshold = 2
 
 The transactions count for each user, regardless of role are:
@@ -39,5 +39,26 @@ This counts as only 1 transaction for user 12.
  * @returns {String[]}
  */
 const processLogs = (logs, threshold) => {
-    
+    const logsObj = {};
+    const thresholdArr = [];
+
+    logs.forEach(log => {
+        const idArr = log.split(' ');
+        const lastEl = idArr.length - 1;
+
+        idArr.forEach((id, i, arr) => {
+            if (i === lastEl || id === arr[i + 1]) null;
+            else logsObj[id] ? logsObj[id]++ : logsObj[id] = 1;
+        });
+    });
+
+    for (const key in logsObj) {
+        if (logsObj[key] >= threshold) thresholdArr.push(key.toString());
+    }
+
+    return thresholdArr.sort((a, b) => a - b);
 }
+
+const logs = ["88 99 200", "88 99 300", "99 32 100", "12 12 15"]
+
+console.log(processLogs(logs, 2));
