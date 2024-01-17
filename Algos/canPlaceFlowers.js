@@ -34,5 +34,14 @@ Constraints:
  * @returns {Boolean}
  */
 const canPlaceFlowers = (flowerbeds, n) => {
-    
+    if (!n) return true;
+
+    for (let i = 0; i < flowerbed.length; i += 2) {
+        if (!flowerbed[i]) {
+            if (flowerbed[i + 1]) i++;
+            else if (! --n) return true;
+        }
+    }
+    return false; 
 }
+
