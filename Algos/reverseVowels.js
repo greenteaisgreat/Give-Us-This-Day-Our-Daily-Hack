@@ -31,5 +31,14 @@ Constraints:
  * @returns {String}
  */
 const reverseVowels = (s) => {
-    
+    const regexVowels = /[aeiou]/gi;
+    const vowels = s.match(regexVowels);
+
+    return s.replace(regexVowels, () => vowels.pop());
 }
+
+const str = 'leetcode';
+const otherStr = 'my name is nathan';
+
+console.log(reverseVowels(str));
+console.log(reverseVowels(otherStr));
