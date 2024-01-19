@@ -32,9 +32,9 @@ Constraints:
  */
 const reverseVowels = (s) => {
     const regexVowels = /[aeiou]/gi;
-    const vowels = s.match(regexVowels);
+    const vowelMatches = s.match(regexVowels);
 
-    return s.replace(regexVowels, () => vowels.pop());
+    return s.replace(regexVowels, () => vowelMatches.pop());
 }
 
 const str = 'leetcode';
