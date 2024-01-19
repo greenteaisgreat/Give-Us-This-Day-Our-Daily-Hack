@@ -51,5 +51,40 @@ function BST(val) {
  * @returns {Number}
  */
 function maxDepth(root) {
-    
+    if (!root) return 0; //can return -1 if counting links rather than nodes
+
+    return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
 }
+
+/*
+solution's structure
+
+         10
+        /   \
+       5     15
+      / \    / \
+     2   7  12  20
+    /
+   1
+*/
+
+
+const ten = new BST(10);
+const five = new BST(5);
+const two = new BST(2);
+const one = new BST(1);
+const seven = new BST(7);
+const fifteen = new BST(15);
+const twelve = new BST(12);
+const twenty = new BST(20);
+
+ten.left = five;
+five.left = two;
+five.right = seven;
+two.left = one;
+
+ten.right = fifteen;
+fifteen.left = twelve;
+fifteen.right = twenty;
+
+console.log(maxDepth(ten));
