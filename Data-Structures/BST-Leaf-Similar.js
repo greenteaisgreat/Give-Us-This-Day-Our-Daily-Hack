@@ -58,6 +58,7 @@ function BST(val) {
     this.right = null;
 };
 
+
 /**
  * 
  * @param {BST} root1 
