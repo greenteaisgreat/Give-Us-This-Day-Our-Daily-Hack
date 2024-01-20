@@ -68,7 +68,6 @@ solution's structure
    1
 */
 
-
 const ten = new BST(10);
 const five = new BST(5);
 const two = new BST(2);
