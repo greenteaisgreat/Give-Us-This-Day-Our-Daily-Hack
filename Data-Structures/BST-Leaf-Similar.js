@@ -65,5 +65,23 @@ function BST(val) {
  * @returns {Boolean}
  */
 function similarLeaf(root1, root2) {
-    
+    const root1Arr = [];
+    const root2Arr = [];
+
+    const findEndLeaf = (root, rootArr) => {
+        if (!root) return;
+
+        if (!root.left && !root.right) {
+            rootArr.push(root.val);
+        }
+
+        findEndLeaf(root.left, rootArr);
+        findEndLeaf(root.right, rootArr);
+    }
+
+    findEndLeaf(root1, root1Arr);
+    findEndLeaf(root2, root2Arr);
+
+    //compares arrays for strict equality by converting them to strings
+    return JSON.stringify(root1Arr) === JSON.stringify(root2Arr);
 }
