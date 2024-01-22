@@ -45,5 +45,14 @@ Constraints:
  * @returns {String}
  */
 const reverseWords = (str) => {
+    return str.split(' ')
+    .filter(word => word !== '')
+    .reverse()
+    .join(' ');
+};
 
-}
+const str = 'the sky is blue';
+const newStr = '   hi there    world  !!  ';
+
+console.log(reverseWords(str));
+console.log(reverseWords(newStr));
