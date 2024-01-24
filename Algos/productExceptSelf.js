@@ -34,5 +34,16 @@ Constraints:
  * @returns {Number[]}
  */
 const productExceptSelf = (nums) => {
-    
+    const result = Array(nums.length).fill(1);
+    const curr = Array(2).fill(1);
+
+    for (let i = 1; i < nums.length; i++) {
+        curr[0] *= nums[i - 1];
+        curr[1] *= nums[nums.length - i];
+
+        result[i] *= curr[0];
+        result[nums.length - i - 1] *= curr[1];
+    }
+
+    return result; 
 }
