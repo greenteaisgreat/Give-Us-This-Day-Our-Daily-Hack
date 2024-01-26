@@ -47,3 +47,5 @@ const productExceptSelf = (nums) => {
 
     return result; 
 }
+
+const arr =[1, 2, 3, 4];
