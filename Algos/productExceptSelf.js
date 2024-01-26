@@ -49,3 +49,5 @@ const productExceptSelf = (nums) => {
 }
 
 const arr =[1, 2, 3, 4];
+
+productExceptSelf(arr);
