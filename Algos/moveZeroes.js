@@ -37,6 +37,26 @@ Constraints:
  * check the array you passed as an argument to see if its been performed in-place
  */
 const moveZeroes = (nums) => {
+    let low = 0;
+    let high = low + 1;
     
+    while (high < nums.length) {
+        if (nums[low]) { //when nums[low] is 0, this condition equates to falsy
+            low++;
+            high++
+        }
+        else {
+            if (nums[high]) {
+                [nums[low], nums[high]] = [nums[high], nums[low]];
+                low++;
+            }
+        }
+        high++;
+    }
 }
 
+const arr = [0, 1, 0, 2, 3, 0, 4];
+
+//can see result when Quokka is used
+moveZeroes(arr);
+arr;
