@@ -33,8 +33,10 @@ Constraints:
 /**
  * 
  * @param {Number[]} nums
- * @returns {Number[]} Remember not to return a new array, as this must be done in-place
+ * @returns {void} After invoking the function, 
+ * check the array you passed as an argument to see if its been performed in-place
  */
 const moveZeroes = (nums) => {
     
 }
+
