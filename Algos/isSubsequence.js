@@ -39,5 +39,19 @@ In this scenario, how would you change your code?
  * @returns {Boolean}
  */
 const isSubsequence = (s, t) => {
-    
+    if (s.length > t.length) return false;
+
+    const tLength = t.length;
+    let subSequence = 0;
+
+    for (let i = 0; i < tLength; i++) {
+        if (s[subSequence] === t[i]) subSequence++;
+    }
+
+    return s.length === subSequence;
 }
+
+const s = 'hello';
+const t = 'ehqweaslaslasogdf';
+
+console.log(isSubsequence(s, t));
