@@ -33,5 +33,30 @@ Constraints:
  * @returns {Number}
  */
 const findMaxAverage = (nums, k) => {
-    
+    let sum = 0;
+    let max = 0;
+
+    //get the average of the first k elements in nums
+    for (let i = 0; i < k; i++) {
+        sum += nums[i];
+    }
+
+    //assign max to the initial average
+    max = sum / k;
+
+    //gets the averages of all k contiguous numbers, leaving out the 
+    //earliest element:
+    //1st iteration: sum(2) += nums[i](50) - nums[i - k](1) === 51
+    //2nd iteration: sum(51) += nums[i](3) - nums[i - k](12) === 42
+    for (let i = k; i < nums.length; i++) {
+        sum += nums[i] - nums[i - k];
+        max = Math.max(max, sum /k);
+    }
+
+    return max;
 }
+
+const nums = [1,12,-5,-6,50,3];
+const k = 4;
+
+console.log(findMaxAverage(nums, k));
