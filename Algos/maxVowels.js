@@ -42,5 +42,27 @@ Constraints:
  * @returns {Number}
  */
 const maxVowels = (s, k) => {
-    
+    //regex helper function
+    const vowelCheck = (letter) => /[aeiou]/gi.test(letter) ? 1 : 0;
+
+    let vowelCount = 0;
+    let tempCount = 0;
+
+    for (let i = 0; i < k; i++) {
+        if (vowelCheck(s[i])) vowelCount++;
+    }
+
+    tempCount = vowelCount;
+
+    //sliding window technique to determine contiguous vowels
+    for (let i = k; i < s.length; i++) {
+        tempCount += vowelCheck(s[i]) - vowelCheck(s[i - k]);
+        vowelCount = Math.max(vowelCount, tempCount);
+    }
+
+    return vowelCount;
 }
+
+const str = 'abciiidef';
+
+console.log(maxVowels(str, 3));
