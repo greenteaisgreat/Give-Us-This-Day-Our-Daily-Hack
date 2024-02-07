@@ -50,5 +50,20 @@ Constraints:
  * @returns {Number[][]}
  */
 const findDifference = (nums1, nums2) => {
+   const num1Set = new Set(nums1);
+   const num2Set = new Set(nums2);
 
+   for (const num of num1Set) {
+        if (num2Set.has(num)) {
+            num1Set.delete(num);
+            num2Set.delete(num);
+        }
+   }
+
+   return [Array.from(num1Set), Array.from(num2Set)];
 }
+
+const num1 = [1,2,3];
+const num2 = [2,4,6];
+
+console.log(findDifference(num1, num2));
