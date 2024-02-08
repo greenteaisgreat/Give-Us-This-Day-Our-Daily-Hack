@@ -35,5 +35,21 @@ Constraints:
  * @returns {Number}
  */
 const longestOnes = (nums, k) => {
-    
+    let window = 0;
+    let i = 0;
+
+    for (; i < nums.length; i++) {
+        if (!nums[i]) k--;
+
+        if (k < 0) {
+            if (!nums[window]) k++;
+            window++;
+        }
+    }
+
+    return i - window;
 }
+
+const nums = [1,1,1,0,0,0,1,1,1,1,0];
+
+console.log(longestOnes(nums, 2));
