@@ -9,7 +9,11 @@ Input: nums = [1,1,1,0,0,0,1,1,1,1,0], k = 2
 Output: 6
 
 Explanation: [1,1,1,0,0,*1*,1,1,1,1,*1*]
+<<<<<<< HEAD
 Bolded numbers were flipped from 0 to 1. The longest subarray is underlined.
+=======
+The longest subarray has asterisks on the 0's changed to 1's
+>>>>>>> bf63dbb37626ad3c5d2d1c07aefd4669f15b1a16
 
 
 
@@ -19,7 +23,11 @@ Input: nums = [0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1], k = 3
 Output: 10
 
 Explanation: [0,0,1,1,*1*,*1*,1,1,1,*1*,1,1,0,0,0,1,1,1,1]
+<<<<<<< HEAD
 Bolded numbers were flipped from 0 to 1. The longest subarray is underlined.
+=======
+The longest subarray has asterisks on the 0's changed to 1's
+>>>>>>> bf63dbb37626ad3c5d2d1c07aefd4669f15b1a16
 
 
 Constraints:
