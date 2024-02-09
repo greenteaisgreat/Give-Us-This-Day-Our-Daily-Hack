@@ -33,6 +33,17 @@ Constraints:
  * @returns {Number}
  */
 const largestAltitude = (gain) => {
-    
+    let total = 0;
+    let highest = 0;
+
+    gain.forEach((altitude, i) => {
+        total += gain[i];
+        if (total > highest) highest = total;
+    });
+
+    return highest;
 }
 
+const gain = [-4,-3,-2,-1,4,3,2];
+
+console.log(largestAltitude(gain));
