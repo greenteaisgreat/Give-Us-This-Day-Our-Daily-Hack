@@ -43,5 +43,15 @@ Constraints:
 */
 
 const removeStars = (s: string): string => {
-    
+    const sArr: string[] = [];
+
+    s.split('').forEach(char => char === '*' ? sArr.pop() : sArr.push(char));
+
+    return sArr.join('');
 }
+
+const s: string = "leet**cod*e";
+const s1: string = "erase*****";
+
+console.log(removeStars(s));
+console.log(removeStars(s1));
