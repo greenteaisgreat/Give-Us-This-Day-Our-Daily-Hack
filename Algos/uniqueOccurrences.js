@@ -32,5 +32,11 @@ Constraints:
  * @returns {Boolean}
  */
 const uniqueOccurrences = (arr) => {
-    
-}
+    const freqObj = {};
+
+    arr.forEach(num => freqObj[num] ? freqObj[num]++ : freqObj[num] = 1);
+
+    const findUniqueOccurrences = (num, i, arr) => arr.indexOf(num) === arr.lastIndexOf(num);
+
+    return Object.values(freqObj).every(findUniqueOccurrences);
+};
