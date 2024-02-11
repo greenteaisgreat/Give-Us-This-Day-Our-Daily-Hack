@@ -33,4 +33,4 @@ Constraints:
  */
 const uniqueOccurrences = (arr) => {
     
-}
+};
