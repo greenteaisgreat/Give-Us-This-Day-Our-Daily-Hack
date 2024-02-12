@@ -37,6 +37,20 @@ Constraints:
     -1000 <= asteroids[i] <= 1000
     asteroids[i] != 0
 */
-const destroyAsteroids = (asteroids: number[]): number[] => {
-    
+const asteroidCollision = (asteroids: number[]): number[] => {
+    const stack: number[] = [];
+
+    for (let asteroid of asteroids ) {
+        if ( asteroid < 0 ) {
+            while (stack.at?(-1) > 0 && stack.at?(-1) < -asteroid) stack.pop()
+            if (stack.at?(-1) + asteroid == 0 && stack.pop()) continue
+            if (stack.at?(-1) > 0 && stack.at?(-1) > -asteroid) continue
+        }
+        stack.push(asteroid)
+    }
+    return stack
 }
+
+const asteroids: number[] = [10,2,-5];
+
+console.log(asteroidCollision(asteroids));
