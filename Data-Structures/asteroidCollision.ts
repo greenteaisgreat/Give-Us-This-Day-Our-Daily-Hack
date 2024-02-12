@@ -38,7 +38,7 @@ Constraints:
     asteroids[i] != 0
 */
 const asteroidCollision = (asteroids: number[]): number[] => {
-    let stack = []
+    let stack: number[] = []
     for ( let a of asteroids ) {
         if ( a < 0 ) {
             while ( stack.at(-1) > 0 && stack.at(-1) < -a ) stack.pop()
