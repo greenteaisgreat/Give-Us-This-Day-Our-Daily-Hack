@@ -38,15 +38,14 @@ Constraints:
     asteroids[i] != 0
 */
 const asteroidCollision = (asteroids: number[]): number[] => {
-    const stack: number[] = [];
-
-    for (let asteroid of asteroids ) {
-        if ( asteroid < 0 ) {
-            while (stack.at?(-1) > 0 && stack.at?(-1) < -asteroid) stack.pop()
-            if (stack.at?(-1) + asteroid == 0 && stack.pop()) continue
-            if (stack.at?(-1) > 0 && stack.at?(-1) > -asteroid) continue
+    let stack = []
+    for ( let a of asteroids ) {
+        if ( a < 0 ) {
+            while ( stack.at(-1) > 0 && stack.at(-1) < -a ) stack.pop()
+            if ( stack.at(-1) + a == 0 && stack.pop() ) continue
+            if ( stack.at(-1) > 0 && stack.at(-1) > -a ) continue
         }
-        stack.push(asteroid)
+        stack.push(a)
     }
     return stack
 }
