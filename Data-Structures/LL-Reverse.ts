@@ -55,6 +55,23 @@ function reverseList (head: typeof ListNode): typeof ListNode | null {
     return prev;
 }
 
+
+
+//recursive approach
+function recursiveReverse(head: typeof ListNode): typeof ListNode | null {
+    if (head === null || head.next === null) return head;
+
+    const recurse = recursiveReverse(head.next);
+
+    head.next.next = head;
+    head.next = null;
+
+    return recurse;
+}
+
+
+
+
 const a = new ListNode('A');
 const b = new ListNode('B');
 const c = new ListNode('C');
@@ -64,4 +81,5 @@ a.next = b;
 b.next = c;
 c.next = d;
 
-console.log(reverseList(a));
+// console.log(reverseList(a));
+console.log(recursiveReverse(a));
