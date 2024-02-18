@@ -39,7 +39,6 @@ function ListNode (val: Number | null, next: typeof ListNode | null): void {
     this.next = (next === undefined ? null : next)
   }
 
-<<<<<<< HEAD
 function reverseList (head: typeof ListNode): typeof ListNode | null {
     if (!head) return null;
 
@@ -84,8 +83,3 @@ c.next = d;
 
 // console.log(reverseList(a));
 console.log(recursiveReverse(a));
-=======
-function reverseList (head: typeof ListNode): typeof ListNode {
-    
-}
->>>>>>> e2463a3c188535e7c73e96e8b47d307251a1c2bb
