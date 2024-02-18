@@ -32,6 +32,28 @@ function TreeNode (val: Number, left: typeof TreeNode | null, right: typeof Tree
     this.right = (right===undefined ? null : right)
 }
 
-function searchBST (root: typeof TreeNode, val: Number): typeof TreeNode {
-    
+function searchBST (root: typeof TreeNode | null, val: Number): typeof TreeNode | null {
+    if (!root) return null;
+    if (val === root.val) return root;
+
+    if (val < root.val) {
+        return val === root.val ? root : searchBST(root.left, val);
+    }
+
+    else return val === root.val ? root : searchBST(root.right, val);
 }
+
+const one = new TreeNode(1);
+const two = new TreeNode(2);
+const three = new TreeNode(3);
+const four = new TreeNode(4);
+const five = new TreeNode(5);
+const six = new TreeNode(6);
+
+four.left = two;
+four.right = five;
+two.left = one;
+two.right = three;
+five.right = six;
+
+console.log(searchBST(four, 8))
