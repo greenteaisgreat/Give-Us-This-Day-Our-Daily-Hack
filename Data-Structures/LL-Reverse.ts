@@ -40,5 +40,5 @@ Could you implement both?
   }
 
 function reverseList (head: typeof ListNode): typeof ListNode {
-
+    
 }
