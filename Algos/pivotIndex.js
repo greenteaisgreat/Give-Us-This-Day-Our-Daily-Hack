@@ -51,6 +51,17 @@ Constraints:
     -1000 <= nums[i] <= 1000
 */
 
-const pivotIndex = (nums: Number[]): Number => {
-    
+const pivotIndex = (nums) => {
+    const totalSum = nums.reduce((a,b) => a + b);
+    let currentSum = 0;
+
+    for (let i = 0; i < nums.length; i++) {
+        if (totalSum - currentSum - nums[i] === currentSum) {
+            return i;
+        }
+        currentSum += nums[i];
+    }
+    return -1;
 }
+
+console.log(pivotIndex([1,7,3,6,5,6]));
