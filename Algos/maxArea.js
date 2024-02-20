@@ -74,7 +74,7 @@ const maxAreaFast = (height) => {
 
         maxWater = Math.max(maxWater, currWater);
 
-        if (left < right) left++;
+        if (height[left] < height[right]) left++;
         else right--;
     }
     return maxWater;
