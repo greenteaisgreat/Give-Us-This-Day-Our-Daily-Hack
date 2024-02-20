@@ -41,6 +41,12 @@ Constraints:
     2 <= n <= 105
     0 <= height[i] <= 104
 */
-const maxArea = (height: Number[]): Number => {
+
+/**
+ * 
+ * @param {number[]} height 
+ * @returns {number}
+ */
+const maxArea = (height)=> {
     
 }
