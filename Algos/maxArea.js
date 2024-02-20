@@ -42,6 +42,7 @@ Constraints:
     0 <= height[i] <= 104
 */
 
+<<<<<<< HEAD:Algos/maxArea.ts
 //Brute Force Method
 const maxArea = (height: number[]): number => {
     let maxWater = 0;
@@ -82,3 +83,13 @@ const height = [2,6,4,3,4,6,3,5];
 
 console.time(maxAreaFast(height));
 console.timeEnd(maxAreaFast(height));
+=======
+/**
+ * 
+ * @param {number[]} height 
+ * @returns {number}
+ */
+const maxArea = (height)=> {
+    
+}
+>>>>>>> c50b90d512b43bd27acbc3d4429644bbe287ba8b:Algos/maxArea.js
