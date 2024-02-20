@@ -41,6 +41,44 @@ Constraints:
     2 <= n <= 105
     0 <= height[i] <= 104
 */
-const maxArea = (height: Number[]): Number => {
-    
+
+//Brute Force Method
+const maxArea = (height: number[]): number => {
+    let maxWater = 0;
+
+    for (let i = 0; i < height.length; i++) {
+        for (let j = i + 1; j < height.length; j++) {
+            let currWater = Math.min(height[i], height[j]) * (j - i);
+
+            maxWater = Math.max(maxWater, currWater);
+        }
+    }
+    return maxWater;
 }
+
+// const height = [2,6,4,3,4,6,3,5];
+
+// console.log(maxArea(height));
+
+
+
+const maxAreaFast = (height: number[]): number => {
+    let maxWater = 0;
+    let left = 0;
+    let right = height.length - 1;
+
+    while (left < right) {
+        let currWater = Math.min(height[left], height[right]) * (right - left);
+
+        maxWater = Math.max(maxWater, currWater);
+
+        if (left < right) left++;
+        else right--;
+    }
+    return maxWater;
+}
+
+const height = [2,6,4,3,4,6,3,5];
+
+console.time(maxAreaFast(height));
+console.timeEnd(maxAreaFast(height));
