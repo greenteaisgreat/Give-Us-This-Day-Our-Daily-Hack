@@ -46,7 +46,7 @@ Constraints:
 */
 class RecentCounter {
     constructor() {
-        
+        this.requests = [];
     }
 
     /**
@@ -55,6 +55,21 @@ class RecentCounter {
      * @returns {number}
      */
     ping(t) {
+        this.requests.push(t);
 
+        while (this.requests[0] < (t - 3000)) {
+            this.requests.shift();
+        }
+
+        console.log('requests arr: ', this.requests);
+        return this.requests.length;
     }
 }
+
+const myPing = new RecentCounter();
+
+myPing.ping(1);
+myPing.ping(2);
+myPing.ping(100);
+myPing.ping(3001);
+console.log(myPing.ping(3002));
