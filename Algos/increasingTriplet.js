@@ -41,5 +41,23 @@ time complexity and O(1) space complexity?
  * @returns {boolean}
 */
 const increasingTriplet = (nums) => {
-    
+    let first = null;
+    let second = null;
+
+    for (let i = 0; i < nums.length; i++) {
+        if (first === null || first >= nums[i]) {
+            first = nums[i];
+            continue;
+        }
+        if (second === null || second >= nums[i]) {
+            second = nums[i];
+            continue;
+        }
+        return true;
+    }
+    return false;
 }
+
+const nums = [20,100,10,12,5,13];
+
+console.log(increasingTriplet(nums))
