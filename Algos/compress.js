@@ -58,5 +58,17 @@ Constraints:
  * @returns {number}
  */
 const compress = (chars) => {
-  //placeholder to override prettier formatting
+  const str = chars.join("").replace(
+    /(.)\1*/g, // \1 matches a grouping of characters; in this case, it's any repeating chars
+    (match) => match[0] + (match.length === 1 ? "" : match.length)
+  );
+
+  chars.forEach((_, i) => (chars[i] = str[i]));
+
+  console.log(chars);
+  return str.length;
 };
+
+const chars = ["a", "a", "b", "b", "c", "c", "c"];
+
+console.log(compress(chars));
