@@ -41,9 +41,10 @@ Constraints:
 
 /**
  * @param {number} num
+ * @param {number} pick //feel free to change to test
  * @return {number}
  */
-const guess = (num, pick) => {
+const guess = (num, pick = 12345) => {
   return num === pick ? 0 : num < pick ? 1 : -1;
 };
 
