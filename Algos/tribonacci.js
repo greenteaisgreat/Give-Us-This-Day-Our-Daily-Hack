@@ -32,4 +32,21 @@ Constraints:
  * @param {number} n
  * @return {number}
  */
-const tribonacci = (n) => {};
+const tribonacci = (n) => {
+  if (!n || typeof n !== "number")
+    return n === 0 ? 0 : Error("Please enter a numeric value");
+
+  let first = 0;
+  let second = 1;
+  let third = 1;
+
+  for (let i = 3; i <= n; i++) {
+    [first, second, third] = [second, third, first + second + third];
+  }
+
+  return third;
+};
+
+console.log(tribonacci(25));
+
+console.log(tribonacci("c"));
