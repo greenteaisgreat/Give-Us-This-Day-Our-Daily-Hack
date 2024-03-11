@@ -34,20 +34,21 @@ Constraints:
  * @returns {Number[]}
  */
 const productExceptSelf = (nums) => {
-    const result = Array(nums.length).fill(1);
-    const curr = Array(2).fill(1);
+  const result = Array(nums.length).fill(1);
+  const curr = Array(2).fill(1);
 
-    for (let i = 1; i < nums.length; i++) {
-        curr[0] *= nums[i - 1];
-        curr[1] *= nums[nums.length - i];
+  //i starts at 1 so we can start checking pairs
+  for (let i = 1; i < nums.length; i++) {
+    curr[0] *= nums[i - 1];
+    curr[1] *= nums[nums.length - i];
 
-        result[i] *= curr[0];
-        result[nums.length - i - 1] *= curr[1];
-    }
+    result[i] *= curr[0];
+    result[nums.length - i - 1] *= curr[1];
+  }
 
-    return result; 
-}
+  return result;
+};
 
-const arr =[1, 2, 3, 4];
+const arr = [1, 2, 3, 4];
 
 productExceptSelf(arr);
