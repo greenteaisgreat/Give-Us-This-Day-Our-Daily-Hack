@@ -38,4 +38,20 @@ Constraints:
  * @param {number} k
  * @returns {number}
  */
-const maxOperations = (nums, k) => {};
+const maxOperations = (nums, k) => {
+  nums.sort((a, b) => a - b);
+
+  let operations = 0;
+  let left = 0;
+  let right = nums.length - 1;
+
+  while (left < right) {
+    let sum = nums[left] + nums[right];
+
+    if (sum === k) {
+      operations++;
+      left++;
+      right--;
+    } else sum < k ? left++ : right--;
+  }
+};
