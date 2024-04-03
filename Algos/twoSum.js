@@ -15,12 +15,11 @@ const twoSumNaive = (arr, target) => {
     }
   }
   return false;
-}
+};
 
-console.time('twoSumNaive');
+console.time("twoSumNaive");
 console.log(twoSumNaive(myArr, 19));
-console.timeEnd('twoSumNaive');
-
+console.timeEnd("twoSumNaive");
 
 // O(n) time complexity
 const twoSumFast = (arr, target) => {
@@ -32,11 +31,11 @@ const twoSumFast = (arr, target) => {
     cache[arr[index]] = index;
   }
   return false;
-}
+};
 
-console.time('twoSumFast');
+console.time("twoSumFast");
 console.log(twoSumFast(myArr, 19));
-console.timeEnd('twoSumFast');
+console.timeEnd("twoSumFast");
 
 // O(n) time complexity; Set() and Map() both have O(1) innate time complexities, but due to
 // the for...of loop, this will evaluate to O(n)
@@ -49,8 +48,27 @@ const twoSumSet = (arr, target) => {
     cache.add(num);
   }
   return false;
-}
+};
 
-console.time('twoSumSet');
+console.time("twoSumSet");
 console.log(twoSumSet(myArr, 19));
-console.timeEnd('twoSumSet');
+console.timeEnd("twoSumSet");
+
+//return the indices of all values that add up to twoSum
+const twoSumIndices = (arr, sum) => {
+  const map = new Map();
+  const finalArr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    const target = sum - arr[i];
+
+    if (map.has(target)) {
+      finalArr.push([map.get(target), i]);
+    }
+
+    map.set(arr[i], i);
+  }
+  return finalArr;
+};
+
+console.log(twoSumIndices(myArr, 6));
