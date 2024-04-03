@@ -33,13 +33,12 @@ Constraints:
  */
 const uniqueOccurrences = (arr) => {
   const map = new Map();
-  const testMap = new Set(map.values()).size;
 
   for (const element of arr) {
     map.set(element, (map.get(element) || 0) + 1);
   }
 
-  return map.size === testMap;
+  return map.size === new Set(map.values()).size;
 };
 
 const arr = [1, 2, 2, 1, 1, 3];
