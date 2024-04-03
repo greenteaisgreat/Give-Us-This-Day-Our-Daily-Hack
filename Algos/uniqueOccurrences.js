@@ -27,16 +27,16 @@ Constraints:
     -1000 <= arr[i] <= 1000
 */
 /**
- * 
+ *
  * @param {Number[]} arr
  * @returns {Boolean}
  */
 const uniqueOccurrences = (arr) => {
-    const freqObj = {};
+  const map = new Map();
 
-    arr.forEach(num => freqObj[num] ? freqObj[num]++ : freqObj[num] = 1);
+  for (const element of arr) {
+    map.set(element, (map.get(element) || 0) + 1);
+  }
 
-    const findUniqueOccurrences = (num, i, arr) => arr.indexOf(num) === arr.lastIndexOf(num);
-
-    return Object.values(freqObj).every(findUniqueOccurrences);
+  return map.size === new Set(map.values()).size;
 };
