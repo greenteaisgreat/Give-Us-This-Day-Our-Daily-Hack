@@ -35,7 +35,7 @@ const uniqueOccurrences = (arr) => {
   const map = new Map();
 
   for (const element of arr) {
-    let test = map.set(element, (map.get(element) || 0) + 1);
+    map.set(element, (map.get(element) || 0) + 1);
   }
 
   return map.size === new Set(map.values()).size;
