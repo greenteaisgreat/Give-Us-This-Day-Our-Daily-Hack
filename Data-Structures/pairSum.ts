@@ -12,7 +12,6 @@ Given the head of a linked list with even length, return the maximum
 twin sum of the linked list.
 
  
-
 Example 1:
 
 Input: head = [5,4,2,1]
