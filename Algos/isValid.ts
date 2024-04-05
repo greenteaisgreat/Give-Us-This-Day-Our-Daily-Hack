@@ -32,4 +32,22 @@ Constraints:
     s consists of parentheses only '()[]{}'.
 */
 
-const isValid = (s: string): boolean => {};
+const isValid = (s: string): boolean => {
+  const parenArr: string[] = [];
+  const parenObj = {
+    "(": ")",
+    "{": "}",
+    "[": "]",
+  };
+
+  for (const char of s) {
+    if (parenObj[char]) parenArr.push(char);
+    else if (parenObj[parenArr.pop()] !== char) {
+      return false;
+    }
+  }
+  return !parenArr.length;
+};
+
+const s = "()[]{}";
+console.log(isValid(s));
