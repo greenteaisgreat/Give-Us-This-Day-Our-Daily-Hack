@@ -20,7 +20,7 @@ Example 3:
 Input: head = []
 Output: []
 
- 
+
 
 Constraints:
 
@@ -34,48 +34,43 @@ Could you implement both?
 */
 
 //Definition for singly-linked list.
-function ListNode (val: Number | null, next: typeof ListNode | null): void {
-    this.val = (val === undefined ? 0 : val)
-    this.next = (next === undefined ? null : next)
-  }
-
-function reverseList (head: typeof ListNode): typeof ListNode | null {
-    if (!head) return null;
-
-    let current = head;
-    let prev = null;
-
-    while(current !== null) {
-        const next = current.next;
-        current.next = prev;
-        prev = current;
-        current = next;
-    }
-
-    return prev;
+function ListNode(val: Number | null, next: typeof ListNode | null): void {
+  this.val = val === undefined ? 0 : val;
+  this.next = next === undefined ? null : next;
 }
 
+function reverseList(head: typeof ListNode): typeof ListNode | null {
+  if (!head) return null;
 
+  let current = head;
+  let prev = null;
+
+  while (current !== null) {
+    const next = current.next;
+    current.next = prev;
+    prev = current;
+    current = next;
+  }
+
+  return prev;
+}
 
 //recursive approach
 function recursiveReverse(head: typeof ListNode): typeof ListNode | null {
-    if (head === null || head.next === null) return head;
+  if (head === null || head.next === null) return head;
 
-    const recurse = recursiveReverse(head.next);
+  const recurse = recursiveReverse(head.next);
 
-    head.next.next = head;
-    head.next = null;
+  head.next.next = head;
+  head.next = null;
 
-    return recurse;
+  return recurse;
 }
 
-
-
-
-const a = new ListNode('A');
-const b = new ListNode('B');
-const c = new ListNode('C');
-const d = new ListNode('D');
+const a = new ListNode("A");
+const b = new ListNode("B");
+const c = new ListNode("C");
+const d = new ListNode("D");
 
 a.next = b;
 b.next = c;
