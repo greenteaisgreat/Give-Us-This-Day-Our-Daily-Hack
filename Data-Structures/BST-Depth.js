@@ -37,19 +37,16 @@ The number of nodes in the tree is in the range [0, 104].
  * @param {Number} val
  * @param {null | BST} left
  * @param {null | BST} right
- * @returns {BST} //this indicates the 'new' keyword will be used and return an instance of BST
+ * @returns {BST} // this indicates the 'new' keyword will be used and return an instance of BST
  */
 function BST(val) {
-    this.val = val;
-    this.left = null;
-    this.right = null;
+  this.val = val;
+  this.left = null;
+  this.right = null;
 }
-
 
 /**
  * @param {BST} root
  * @returns {Number}
  */
-function maxDepth(root) {
-    
-}
+function maxDepth(root) {}
