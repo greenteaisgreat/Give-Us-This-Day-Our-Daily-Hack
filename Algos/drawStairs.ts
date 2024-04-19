@@ -17,4 +17,12 @@ drawStairs(6) ->
 
 */
 
-const drawStairs = (n: number): void => {};
+const drawStairs = (n: number): void => {
+  let step = 1;
+
+  while (step <= n) {
+    console.log(" ".repeat(n - step) + "#".repeat(step++));
+  }
+};
+
+drawStairs(10);
