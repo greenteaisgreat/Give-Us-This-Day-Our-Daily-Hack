@@ -35,4 +35,20 @@ Write an efficient algorithm for the following assumptions:
   N is an integer within the range [1..2,147,483,647].
 */
 
-const binaryGap = (n: number): number => {};
+const binaryGap = (n: number): number => {
+  const bin = n.toString(2);
+  let max = 0;
+  let curr = 0;
+
+  for (const num of bin) {
+    if (num === "0") curr++;
+    else {
+      max = Math.max(max, curr);
+      curr = 0;
+    }
+  }
+  return max;
+};
+
+const num = 1041;
+console.log(binaryGap(num));
