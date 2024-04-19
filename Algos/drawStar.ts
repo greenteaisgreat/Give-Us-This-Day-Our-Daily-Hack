@@ -21,4 +21,4 @@ drawStar(5) ->
 
 */
 
-const drawStar = (n: number): string => {};
+const drawStar = (n: number): void => {};
