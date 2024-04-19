@@ -5,19 +5,20 @@ be 'n' characters long. Be sure to include any leading/trailing spaces per row.
 
 Examples:
 drawStar(1) ->
-+
+  +
 
 drawStar(3) ->
-\|/
--+-
-/|\
+  \|/
+  -+-
+  /|\
 
 drawStar(5) ->
-\ | /
- \|/ 
---+--
- /|\ 
-/ | \
+  \ | /
+   \|/ 
+  --+--
+   /|\ 
+  / | \
+
 */
 
 const drawStar = (n: number): string => {};
