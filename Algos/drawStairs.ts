@@ -17,4 +17,4 @@ drawStairs(6) ->
 
 */
 
-const drawStairs = (n: number): string => {};
+const drawStairs = (n: number): void => {};
