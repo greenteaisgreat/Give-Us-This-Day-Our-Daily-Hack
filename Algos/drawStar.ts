@@ -22,7 +22,7 @@ drawStar(5) ->
 */
 
 const drawStar = (n: number): void => {
-  //check for bad input
+  //check for bad input; n MUST be an odd number!
   if (n < 1 || n % 2 === 0) return;
   if (n === 1) return console.log("+");
 
@@ -65,4 +65,4 @@ const drawHalfStar = (mid: number, half: string = "top"): string => {
   return halfStar;
 };
 
-drawStar(10);
+drawStar(3);
