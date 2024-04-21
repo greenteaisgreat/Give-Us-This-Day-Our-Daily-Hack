@@ -36,4 +36,20 @@ Follow up:
     Could you do it in-place with O(1) extra space?
 */
 
-const rotate = (nums: number[], k: number): void | Number[] => {};
+const rotate = (nums: number[], k: number): void | Number[] => {
+  k %= nums.length;
+
+  const reverse = (i: number, j: number): void => {
+    while (i < j) {
+      [nums[i++], nums[j--]] = [nums[j], nums[i]];
+    }
+  };
+  reverse(0, nums.length - 1);
+  reverse(0, k - 1);
+  reverse(k, nums.length - 1);
+
+  return nums;
+};
+
+const arr = [1, 2, 3, 4, 5];
+console.log(rotate(arr, 3));
