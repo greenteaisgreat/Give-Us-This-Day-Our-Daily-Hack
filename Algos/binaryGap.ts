@@ -16,7 +16,7 @@ The number 15 has binary representation 1111 and has no binary gaps.
 
 The number 32 has binary representation 100000 and has no binary gaps.
 
-Write a function:
+Write a function:  
 
   function solution(N);
 
