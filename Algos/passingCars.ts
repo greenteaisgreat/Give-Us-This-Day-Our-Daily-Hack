@@ -42,4 +42,13 @@ Write an efficient algorithm for the following assumptions:
         each element of array A is an integer that can have one of the following values: 0, 1.
 */
 
-const passingCars = (arr: number[]): number => {};
+const passingCars = (arr: number[]): number => {
+  let zeroCount = 0;
+  let total = 0;
+
+  for (const car of arr) {
+    !car ? zeroCount++ : (total += zeroCount);
+    if (total > 1000000000) return -1;
+  }
+  return total;
+};
