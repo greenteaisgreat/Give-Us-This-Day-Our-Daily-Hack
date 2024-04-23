@@ -48,4 +48,31 @@ const ladderLength = (
   beginWord: string,
   endWord: string,
   wordList: number[]
-): number => {};
+): number => {
+  const alphabet: string = "abcdefghijklmnopqrstuvwxyz";
+  const wordset: Set<number> = new Set(wordList);
+  const queue: (string | number)[][] = [];
+  const seen = new Set([beginWord]);
+
+  queue.push([beginWord, 0]);
+
+  while (queue.length > 0) {
+    const [word, depth] = queue.shift();
+
+    if (word === endWord) return depth + 1;
+
+    for (let i = 0; i < word.length; i++) {
+      for (let c of alphabet) {
+        let word2 = word.split("");
+        word2[i] = c;
+        word2 = word2.join("");
+
+        if (wordset.has(word2) && !seen.has(word2)) {
+          queue.push([word2, depth + 1]);
+          seen.add(word2);
+        }
+      }
+    }
+  }
+  return 0;
+};
