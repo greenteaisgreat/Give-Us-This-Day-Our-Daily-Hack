@@ -54,4 +54,25 @@ Write an efficient algorithm for the following assumptions:
         string S consists only of upper-case English letters A, C, G, T.
 */
 
-const genomicRangeQuery = (S: string, P: number[], Q: number[]): number[] => {};
+interface NucObj {
+  [key: string]: number;
+}
+
+const genomicRangeQuery = (S: string, P: number[], Q: number[]): number[] => {
+  const genArr: number[] = [];
+  const nucObj: NucObj = { A: 1, C: 2, G: 3, T: 4 };
+
+  for (let i = 0; i < Q.length; i++) {
+    let count = 0;
+    const slicedNuc = S.slice(P[i], Q[i] + 1);
+    const innerGenArr: number[] = [];
+
+    for (const char of slicedNuc) {
+      innerGenArr.push(nucObj[char]);
+    }
+
+    let lowestGen = Math.min(...innerGenArr);
+    genArr.push(lowestGen);
+  }
+  return genArr;
+};
