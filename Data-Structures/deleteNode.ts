@@ -44,4 +44,7 @@ function ListNode(val: number, next: null | typeof ListNode): void {
   this.next = null;
 }
 
-function deleteNode(node: typeof ListNode): void {}
+function deleteNode(node: typeof ListNode): void {
+  node.val = node.next.val;
+  node.next = node.next.next;
+}
