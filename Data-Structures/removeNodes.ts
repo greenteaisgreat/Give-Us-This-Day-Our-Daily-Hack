@@ -36,4 +36,13 @@ function ListNode(val: number, next: null | typeof ListNode): void {
   this.next = null;
 }
 
-function removeNodes(head: typeof ListNode): typeof ListNode {}
+function removeNodes(head: typeof ListNode): typeof ListNode {
+  if (!head) return null;
+
+  head.next = removeNodes(head.next);
+
+  if (head.next && head.val < head.next.val) {
+    return head.next;
+  }
+  return head;
+}
