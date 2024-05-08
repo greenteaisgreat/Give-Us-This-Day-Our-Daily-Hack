@@ -31,9 +31,25 @@ Constraints:
     that does not have leading zeros, except the number 0 itself.
 */
 
-function ListNode(val: number, next: null | number): void {
+type ListNode = {
+  val: number;
+  next: ListNode;
+};
+
+function ListNode(val, next): void {
   this.val = val;
   this.next = null;
 }
 
-function doubleIt(head: typeof ListNode): typeof ListNode | void {}
+function doubleIt(head: ListNode): ListNode {
+  const carry = double(head);
+  if (carry > 0) head = new ListNode(carry, head);
+  return head;
+}
+
+function double(head: ListNode): number {
+  if (!head) return 0;
+  const doubleVal = head.val * 2 + double(head.next);
+  head.val = doubleVal % 10;
+  return Math.floor(doubleVal / 10);
+}
