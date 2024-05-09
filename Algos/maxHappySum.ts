@@ -35,4 +35,16 @@ Explanation: We can pick 2 children in the following way:
 The sum of the happiness values of the selected children is 1 + 0 = 1.
 */
 
-const maxHappySum = (happiness: number[], k: number): number => {};
+const maxHappySum = (happiness: number[], k: number): number => {
+  const sortedHappy = [...happiness].sort((a, b) => b - a);
+  let maxHappy = 0;
+  let i = 0;
+
+  while (k > 0 && i < sortedHappy.length) {
+    sortedHappy[i] = Math.max(sortedHappy[i] - i, 0);
+    maxHappy += sortedHappy[i];
+    i++;
+    k--;
+  }
+  return maxHappy;
+};
