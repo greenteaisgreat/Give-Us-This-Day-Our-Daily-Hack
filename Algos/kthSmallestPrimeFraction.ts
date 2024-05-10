@@ -33,4 +33,20 @@ Constraints:
     All the numbers of arr are unique and sorted in strictly increasing order.
     1 <= k <= arr.length * (arr.length - 1) / 2
 */
-const kthSmallestPrimeFraction = (arr: number[], k: number): number[] => {};
+const kthSmallestPrimeFraction = (arr: number[], k: number): number[] => {
+  const decArr: number[][] = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      decArr.push([arr[i] / arr[j], arr[i], arr[j]]);
+    }
+  }
+  decArr.sort((a, b) => a[0] - b[0]);
+
+  return [decArr[k - 1][1], decArr[k - 1][2]];
+};
+
+const arr = [1, 2, 3, 5];
+const k = 3;
+
+console.log(kthSmallestPrimeFraction(arr, k));
