@@ -31,4 +31,25 @@ Constraints:
     1 <= m, n <= 20
     grid[i][j] is either 0 or 1.
 */
-const matrixScore = (grid: number[][]): number => {};
+const matrixScore = (grid: number[][]): number => {
+  const rows = grid.length;
+  const cols = grid[0].length;
+  let maxScore = Math.pow(2, cols - 1) * rows;
+
+  for (let col = 1; col < cols; col++) {
+    let curr = 0;
+    for (let row = 0; row < rows; row++) {
+      curr += grid[row][0] === grid[row][col] ? 1 : 0;
+    }
+    maxScore += Math.max(curr, rows - curr) * Math.pow(2, cols - 1 - col);
+  }
+  return maxScore;
+};
+
+const grid = [
+  [0, 0, 1, 1],
+  [1, 0, 1, 0],
+  [1, 1, 0, 0],
+];
+
+console.log(matrixScore(grid));
