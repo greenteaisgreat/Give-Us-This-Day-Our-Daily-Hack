@@ -45,4 +45,44 @@ Constraints:
     0 <= grid[i][j] <= 100
     There are at most 25 cells containing gold.
 */
-const getMaximumGold = (grid: number[][]): number => {};
+const getMaximumGold = (grid: number[][]): number => {
+  const rows = grid.length;
+  const cols = grid[0].length;
+  let maxGold = 0;
+
+  const traversal = (row: number, col: number): number => {
+    if (row < 0 || col < 0) return 0;
+    if (row >= rows || col >= cols) return 0;
+    if (!grid[row][col]) return 0;
+
+    const currGold = grid[row][col];
+    grid[row][col] = 0;
+
+    const up = traversal(row + 1, col);
+    const down = traversal(row - 1, col);
+    const right = traversal(row, col + 1);
+    const left = traversal(row, col - 1);
+
+    grid[row][col] = currGold;
+    return currGold + Math.max(up, down, left, right);
+  };
+
+  for (let row = 0; row < rows; row++) {
+    for (let col = 0; col < cols; col++) {
+      if (grid[row][col]) {
+        maxGold = Math.max(maxGold, traversal(row, col));
+      }
+    }
+  }
+  return maxGold;
+};
+
+const grid = [
+  [1, 0, 7],
+  [2, 0, 6],
+  [3, 4, 5],
+  [0, 3, 0],
+  [9, 0, 20],
+];
+
+console.log(getMaximumGold(grid));
