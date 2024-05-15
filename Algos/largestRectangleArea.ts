@@ -23,4 +23,24 @@ Constraints:
     1 <= heights.length <= 105
     0 <= heights[i] <= 104
 */
-const largestRectangleArea = (heights: number[]): number => {};
+const largestRectangleArea = (heights: number[]): number => {
+  const stack: number[][] = [];
+  let maxArea = 0;
+  heights.push(0);
+
+  for (let i = 0; i < heights.length; i++) {
+    let currArea = i;
+
+    while (stack.length && stack[stack.length - 1][1] > heights[i]) {
+      const [pos, area]: any = stack.pop();
+      maxArea = Math.max(maxArea, (i - pos) * area);
+      currArea = pos;
+    }
+    stack.push([currArea, heights[i]]);
+  }
+  return maxArea;
+};
+
+const heights = [2, 1, 5, 6, 2, 3];
+
+console.log(largestRectangleArea(heights));
