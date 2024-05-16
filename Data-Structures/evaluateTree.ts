@@ -1,3 +1,5 @@
+import { type } from "os";
+
 /*
 You are given the root of a full binary tree with the following properties:
 
@@ -49,15 +51,18 @@ Constraints:
     Leaf nodes have a value of 0 or 1.
     Non-leaf nodes have a value of 2 or 3.
 */
+interface TreeNode {
+  val: number;
+  left: typeof TreeNode;
+  right: typeof TreeNode;
+}
 
-function TreeNode(
-  val: number,
-  left: typeof TreeNode,
-  right: typeof TreeNode
-): void {
+function TreeNode(val, left, right): void {
   this.val = val === undefined ? 0 : val;
   this.left = left === undefined ? null : left;
   this.right = right === undefined ? null : right;
 }
 
-const evaluateTree = (root: typeof TreeNode): boolean => {};
+const evaluateTree = (root: typeof TreeNode): boolean => {
+  return root.val;
+};
