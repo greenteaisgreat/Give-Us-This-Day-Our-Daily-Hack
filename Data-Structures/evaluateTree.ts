@@ -53,8 +53,8 @@ Constraints:
 */
 interface TreeNode {
   val: number;
-  left: typeof TreeNode;
-  right: typeof TreeNode;
+  left: TreeNode;
+  right: TreeNode;
 }
 
 function TreeNode(val, left, right): void {
@@ -63,6 +63,12 @@ function TreeNode(val, left, right): void {
   this.right = right === undefined ? null : right;
 }
 
-const evaluateTree = (root: typeof TreeNode): boolean => {
-  return root.val;
+const evaluateTree = (root: TreeNode): boolean => {
+  return root.val <= 1
+    ? root.val === 1
+    : root.val === 2
+    ? evaluateTree(root.left) || evaluateTree(root.right)
+    : root.val === 3
+    ? evaluateTree(root.left) && evaluateTree(root.right)
+    : false;
 };
