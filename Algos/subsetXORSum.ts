@@ -56,4 +56,16 @@ Constraints:
     1 <= nums.length <= 12
     1 <= nums[i] <= 20
 */
-const subsetXORSum = (nums: number[]): number => {};
+const subsetXORSum = (nums: number[]): number => {
+  let xORTotal = 0;
+
+  for (const num of nums) {
+    xORTotal |= num;
+    console.log(xORTotal);
+  }
+
+  return xORTotal << (nums.length - 1);
+};
+
+const nums = [3, 4, 5, 6, 7, 8];
+console.log(subsetXORSum(nums));
