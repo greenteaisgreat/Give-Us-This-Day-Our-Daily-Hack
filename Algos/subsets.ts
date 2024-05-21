@@ -24,4 +24,22 @@ Constraints:
     -10 <= nums[i] <= 10
     All the numbers of nums are unique.
 */
-const subsets = (nums: number[]): number[][] => {};
+const subsets = (nums: number[]): number[][] => {
+  if (!nums.length) return [[]];
+
+  const firstEl = nums[0];
+  const remainingEl = nums.slice(1);
+
+  const combsWithoutFirst = subsets(remainingEl);
+  const combsWithFirst: number[][] = [];
+
+  combsWithoutFirst.forEach((comb) => {
+    const combWithFirst = [...comb, firstEl];
+    combsWithFirst.push(combWithFirst);
+  });
+
+  return [...combsWithoutFirst, ...combsWithFirst];
+};
+
+const nums = [1, 2, 3];
+console.log(subsets(nums));
