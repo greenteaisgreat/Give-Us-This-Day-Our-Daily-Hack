@@ -16,7 +16,7 @@ Example 2:
 Input: root = [4,2,7,1,3], val = 5
 Output: []
 
- 
+
 
 Constraints:
 
@@ -26,21 +26,26 @@ Constraints:
     1 <= val <= 107
 */
 
-function TreeNode (val: Number, left: typeof TreeNode | null, right: typeof TreeNode | null): void {
-    this.val = (val===undefined ? 0 : val)
-    this.left = (left===undefined ? null : left)
-    this.right = (right===undefined ? null : right)
+function TreeNode(
+  val: Number,
+  left: typeof TreeNode | null,
+  right: typeof TreeNode | null
+): void {
+  this.val = val === undefined ? 0 : val;
+  this.left = left === undefined ? null : left;
+  this.right = right === undefined ? null : right;
 }
 
-function searchBST (root: typeof TreeNode | null, val: Number): typeof TreeNode | null {
-    if (!root) return null;
-    if (val === root.val) return root;
+function searchBST(
+  root: typeof TreeNode | null,
+  val: Number
+): typeof TreeNode | null {
+  if (!root) return null;
+  if (val === root.val) return root;
 
-    if (val < root.val) {
-        return val === root.val ? root : searchBST(root.left, val);
-    }
-
-    else return val === root.val ? root : searchBST(root.right, val);
+  if (val < root.val) {
+    return val === root.val ? root : searchBST(root.left, val);
+  } else return val === root.val ? root : searchBST(root.right, val);
 }
 
 const one = new TreeNode(1);
@@ -56,4 +61,4 @@ two.left = one;
 two.right = three;
 five.right = six;
 
-console.log(searchBST(four, 8))
+console.log(searchBST(four, 8));
