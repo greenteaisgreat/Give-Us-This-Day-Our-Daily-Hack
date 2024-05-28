@@ -34,4 +34,18 @@ Constraints:
     nums[i] is either 0 or 1.
 */
 
-const longestSubarray = (nums: number[]): number => {};
+const longestSubarray = (nums: number[]): number => {
+  let window = 0;
+  let i = 0;
+  let k = 1;
+
+  for (; i < nums.length; i++) {
+    if (!nums[i]) k--;
+
+    if (k < 0) {
+      if (!nums[window]) k++;
+      window++;
+    }
+  }
+  return i - window - 1;
+};
