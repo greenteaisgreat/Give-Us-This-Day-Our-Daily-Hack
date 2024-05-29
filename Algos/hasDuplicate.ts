@@ -11,4 +11,11 @@ Input: nums = [1, 2, 3, 4]
 Output: false
 */
 
-const hasDuplicate = (nums: number[]): boolean {}
+const hasDuplicate = (nums: number[]): boolean => {
+  const newNums = new Set(nums);
+
+  return newNums.size !== nums.length;
+};
+
+const nums = [1, 2, 3, 3];
+console.log(hasDuplicate(nums));
