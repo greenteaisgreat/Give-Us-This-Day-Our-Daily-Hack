@@ -65,6 +65,8 @@ const twoSumIndices = (arr, sum) => {
 
     if (map.has(target)) {
       finalArr.push([map.get(target), i]);
+      // or if only one solution exists
+      // finalArr.push(map.get(target), i);
     }
 
     map.set(arr[i], i);
