@@ -31,4 +31,26 @@ Constraints:
     1 <= k <= nums.length
 */
 
-const numberOfSubarrays = (nums: number[], k: number): number => {};
+const numberOfSubarrays = (nums: number[], k: number): number => {
+  const map = new Map();
+  let sum = 0;
+  let totalNice = 0;
+
+  map.set(0, 1);
+
+  for (let i = 0; i < nums.length; i++) {
+    sum += nums[i] % 2;
+    const target = sum - k;
+
+    if (map.has(target)) {
+      totalNice += map.get(target);
+    }
+
+    map.set(sum, (map.get(sum) || 0) + 1);
+  }
+
+  return totalNice;
+};
+
+const arr = [2, 2, 2, 1, 2, 2, 1, 2, 2, 2];
+console.log(numberOfSubarrays(arr, 2));
