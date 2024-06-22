@@ -24,4 +24,26 @@ Constraints:
 
 */
 
-const subarraySum = (nums: number[], k: number): number => {};
+const subarraySum = (nums: number[], k: number): number => {
+  const map = new Map();
+  let sum = 0;
+  let total = 0;
+
+  map.set(0, 1);
+
+  for (let i = 0; i < nums.length; i++) {
+    sum += nums[i];
+    const target = sum - k;
+
+    if (map.has(target)) {
+      total += map.get(target);
+    }
+
+    map.set(sum, (map.get(sum) || 0) + 1);
+  }
+
+  return total;
+};
+
+const arr = [1, 2, 3];
+console.log(subarraySum(arr, 3));
