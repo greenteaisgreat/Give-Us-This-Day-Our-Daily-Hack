@@ -39,4 +39,24 @@ Constraints:
     1 <= nums.length <= 105
     1 <= k <= nums.length
 */
-const minKBitFlips = (nums: number[], k: number): number => {};
+const minKBitFlips = (nums: number[], k: number): number => {
+  let currFlips = 0;
+  let finalFlips = 0;
+  const trackedFlips = Array(nums.length).fill(0);
+
+  for (let i = 0; i < nums.length; i++) {
+    if (i >= k) currFlips ^= trackedFlips[i - k];
+    if (currFlips === nums[i]) {
+      if (i + k > nums.length) return -1;
+      else {
+        trackedFlips[i] = 1;
+        currFlips ^= 1;
+        finalFlips++;
+      }
+    }
+  }
+  return finalFlips;
+};
+
+const arr = [0, 0, 0, 1, 0, 1, 1, 0];
+console.log(minKBitFlips(arr, 3));
