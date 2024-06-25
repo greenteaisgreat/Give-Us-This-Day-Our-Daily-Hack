@@ -34,4 +34,82 @@ interface TreeNode {
   right: TreeNode | null;
 }
 
-const bstToGst = (root: TreeNode): TreeNode => {};
+const bstToGst = (root: TreeNode): TreeNode => {
+  let nodeSum = 0;
+
+  const inOrderTraversal = (node: TreeNode): void => {
+    if (!node) return;
+    if (node.right) inOrderTraversal(node.right);
+    nodeSum += node.val;
+    node.val = nodeSum;
+    if (node.left) inOrderTraversal(node.left);
+  };
+
+  inOrderTraversal(root);
+  return root;
+};
+
+const root = arrayToTree([
+  4,
+  1,
+  6,
+  0,
+  2,
+  5,
+  7,
+  null,
+  null,
+  null,
+  3,
+  null,
+  null,
+  null,
+  8,
+]);
+console.log(bstToGst(root));
+
+// converts array to tree; Leetcode probably does something like this under the hood
+function arrayToTree(arr: (number | null)[]): TreeNode {
+  const root: TreeNode = { val: arr[0]!, left: null, right: null };
+  const queue: TreeNode[] = [root];
+  let i = 1;
+
+  while (queue.length > 0 && i < arr.length) {
+    const current = queue.shift()!;
+    if (arr[i] !== null) {
+      current.left = { val: arr[i]!, left: null, right: null };
+      queue.push(current.left);
+    }
+    i++;
+    if (i < arr.length && arr[i] !== null) {
+      current.right = { val: arr[i]!, left: null, right: null };
+      queue.push(current.right);
+    }
+    i++;
+  }
+
+  return root;
+}
+
+function treeToArray(root: TreeNode): (number | null)[] {
+  if (!root) return [];
+  const result: (number | null)[] = [];
+  const queue: (TreeNode | null)[] = [root];
+
+  while (queue.length > 0) {
+    const current = queue.shift();
+    if (current) {
+      result.push(current.val);
+      queue.push(current.left);
+      queue.push(current.right);
+    } else {
+      result.push(null);
+    }
+  }
+
+  while (result[result.length - 1] === null) {
+    result.pop();
+  }
+
+  return result;
+}
