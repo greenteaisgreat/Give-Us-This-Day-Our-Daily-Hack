@@ -13,6 +13,12 @@ Return the maximum total importance of all roads possible after assigning the va
 
 
 Example 1:
+  1
+ /|\
+0-|-2 — 4
+  3/
+
+Importance: 0: 2, 1: 4, 2: 5, 3: 3, 4: 1
 
 Input: n = 5, roads = [[0,1],[1,2],[2,3],[0,2],[1,3],[2,4]]
 Output: 43
