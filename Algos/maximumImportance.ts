@@ -52,4 +52,30 @@ Constraints:
     There are no duplicate roads.
 */
 
-const maximumImportance = (n: number, roads: number[][]): number => {};
+const maximumImportance = (n: number, roads: number[][]): number => {
+  const degrees = Array(n).fill(0);
+  let total = 0;
+
+  for (let [city1, city2] of roads) {
+    degrees[city1]++;
+    degrees[city2]++;
+  }
+
+  degrees.sort((a, b) => b - a);
+
+  for (let i = 0; i < degrees.length; i++) {
+    total += (n - i) * degrees[i];
+  }
+  return total;
+};
+
+const roads = [
+  [0, 1],
+  [1, 2],
+  [2, 3],
+  [0, 2],
+  [1, 3],
+  [2, 4],
+];
+
+console.log(maximumImportance(5, roads));
