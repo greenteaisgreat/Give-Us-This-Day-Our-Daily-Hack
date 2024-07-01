@@ -26,4 +26,14 @@ Constraints:
     1 <= s.length <= 105
     s consists of only lowercase English letters.
 */
-const firstUniqChar = (s: string): number => {};
+const firstUniqChar = (s: string): number => {
+  for (let i = 0; i < s.length; i++) {
+    if (s.lastIndexOf(s[i]) === s.indexOf(s[i])) {
+      return i;
+    }
+  }
+  return -1;
+};
+
+const s = "supercalifragilisticexpialidocius";
+console.log(firstUniqChar(s));
