@@ -36,4 +36,5 @@ const firstUniqChar = (s: string): number => {
 };
 
 const s = "supercalifragilisticexpialidocius";
-console.log(firstUniqChar(s));
+const s1 = "aaaaaaa";
+console.log(firstUniqChar(s1));
