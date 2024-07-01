@@ -3,7 +3,6 @@ Given a string s, find the first non-repeating character in it and return its in
 If it does not exist, return -1.
 
 
-
 Example 1:
 
 Input: s = "leetcode"
