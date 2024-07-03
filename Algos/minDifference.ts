@@ -51,4 +51,22 @@ Constraints:
     1 <= nums.length <= 105
     -109 <= nums[i] <= 109
 */
-const minDifference = (nums: number[]): number => {};
+
+const minDifference = (nums: number[]): number => {
+  const length = nums.length;
+  if (length <= 4) return 0;
+
+  const newNums = [...nums].sort((a, b) => a - b);
+
+  const minDiff = Math.min(
+    newNums[length - 1] - newNums[3], // Change 3 smallest elements
+    newNums[length - 2] - newNums[2], // Change 2 smallest and 1 largest element
+    newNums[length - 3] - newNums[1], // Change 1 smallest and 2 largest elements
+    newNums[length - 4] - newNums[0] // Change 3 largest elements
+  );
+
+  return minDiff;
+};
+
+const nums = [1, 5, 0, 10, 14];
+console.log(minDifference(nums));
