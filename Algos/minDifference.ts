@@ -70,3 +70,18 @@ const minDifference = (nums: number[]): number => {
 
 const nums = [1, 5, 0, 10, 14];
 console.log(minDifference(nums));
+
+/*
+newNums = [0, 1, 5, 10, 14]
+
+Calculating Differences:
+
+    newNums[length - 1] - newNums[3] => 14 - 10 = 4
+    newNums[length - 2] - newNums[2] => 10 - 5 = 5
+    newNums[length - 3] - newNums[1] => 5 - 1 = 4
+    newNums[length - 4] - newNums[0] => 1 - 0 = 1
+
+Finding Minimum Difference:
+
+    minDiff = Math.min(4, 5, 4, 1) = 1
+*/
