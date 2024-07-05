@@ -73,7 +73,6 @@ console.log(minDifference(nums));
 
 /*
 newNums = [0, 1, 5, 10, 14]
-
 Calculating Differences:
 
     newNums[length - 1] - newNums[3] => 14 - 10 = 4
@@ -82,6 +81,22 @@ Calculating Differences:
     newNums[length - 4] - newNums[0] => 1 - 0 = 1
 
 Finding Minimum Difference:
+minDiff = Math.min(4, 5, 4, 1) = 1
 
-    minDiff = Math.min(4, 5, 4, 1) = 1
+
+Sorted array: newNums = [0, 4, 7, 12, 15, 21, 34, 76, 89]
+Calculating Differences:
+
+    newNums[length - 1] - newNums[3]:
+        newNums[8] - newNums[3] => 89 - 12 = 77
+    newNums[length - 2] - newNums[2]:
+        newNums[7] - newNums[2] => 76 - 7 = 69
+    newNums[length - 3] - newNums[1]:
+        newNums[6] - newNums[1] => 34 - 4 = 30
+    newNums[length - 4] - newNums[0]:
+        newNums[5] - newNums[0] => 21 - 0 = 21
+
+Finding Minimum Difference:
+
+    minDiff = Math.min(77, 69, 30, 21) = 21
 */
