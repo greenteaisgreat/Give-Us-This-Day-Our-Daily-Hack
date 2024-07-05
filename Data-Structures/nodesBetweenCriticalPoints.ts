@@ -57,9 +57,49 @@ Constraints:
     1 <= Node.val <= 105
 */
 
-interface ListNode {
+type ListNode = {
   val: number;
-  next: ListNode | null;
-}
+  next: ListNode;
+  // property to get TS to be quiet for array arg passed to head param
+  length: number;
+};
 
-const nodesBetweenCriticalPoints = (head: ListNode): number[] => {};
+const nodesBetweenCriticalPoints = (head: ListNode): number[] => {
+  const answer = Array(2).fill(-1);
+  if (head.length <= 3) return answer;
+
+  let prev = head;
+  let curr = prev.next;
+  let minDistance = Number.MAX_SAFE_INTEGER;
+
+  let currIdx = 1;
+  let initCrit = 0;
+  let prevCrit = 0;
+
+  while (curr.next) {
+    if (
+      (curr.val < prev.val && curr.val < curr.next.val) ||
+      (curr.val > prev.val && curr.val > curr.next.val)
+    ) {
+      if (!prevCrit) {
+        prevCrit = currIdx;
+        initCrit = currIdx;
+      } else {
+        minDistance = Math.min(minDistance, currIdx - prevCrit);
+        prevCrit = currIdx;
+      }
+    }
+
+    currIdx++;
+    prev = curr;
+    curr = curr.next;
+  }
+
+  if (minDistance !== Number.MAX_SAFE_INTEGER) {
+    const maxDistance = prevCrit - initCrit;
+    answer[0] = minDistance;
+    answer[1] = maxDistance;
+  }
+
+  return answer;
+};
