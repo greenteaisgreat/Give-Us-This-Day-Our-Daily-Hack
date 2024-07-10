@@ -17,7 +17,7 @@ If there are fewer than two critical points, return [-1, -1].
 
 
 
-Example 1:
+Example 1:  
 
 Input: head = [3,1]
 Output: [-1,-1]
