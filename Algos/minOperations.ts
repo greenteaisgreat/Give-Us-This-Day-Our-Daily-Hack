@@ -43,4 +43,19 @@ Constraints:
     Folder names consist of lowercase English letters and digits.
 */
 
-const minOperations = (logs: string[]): number => {};
+const minOperations = (logs: string[]): number => {
+  let operations = 0;
+  let curr = "./";
+  let back = "../";
+
+  for (const char of logs) {
+    if (char === back) {
+      if (!!operations) operations--;
+    } else if (char !== curr) operations++;
+  }
+
+  return operations;
+};
+
+const logs = ["d1/", "d2/", "./", "d3/", "../", "d31/"];
+console.log(minOperations(logs));
