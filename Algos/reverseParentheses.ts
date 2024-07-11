@@ -33,4 +33,24 @@ Constraints:
     It is guaranteed that all parentheses are balanced.
 */
 
-const reverseParentheses = (s: string): string => {};
+const reverseParentheses = (s: string): string => {
+  const stack: string[] = [];
+  let reversed = "";
+
+  for (let i = 0; i < s.length; i++) {
+    while (i < s.length && s[i] !== "(" && s[i] !== ")") {
+      reversed += s[i++];
+    }
+    if (s[i] === "(") {
+      stack.push(reversed);
+      reversed = "";
+    }
+    if (s[i] === ")") {
+      reversed = stack.pop() + reversed.split("").reverse().join("");
+    }
+  }
+  return reversed;
+};
+
+const s = "(ed(et(oc))el)";
+console.log(reverseParentheses(s));
