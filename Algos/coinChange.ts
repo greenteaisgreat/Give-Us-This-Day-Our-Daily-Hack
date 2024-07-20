@@ -34,4 +34,27 @@ Constraints:
     0 <= amount <= 104
 */
 
-const coinChange = (coins: number[], amount: number): number => {};
+const coinChange = (coins: number[], amount: number): number => {
+  const cache = {};
+
+  const makeChange = (amount: number): number => {
+    if (cache[amount]) return cache[amount];
+    if (!amount) return 0;
+
+    let change = Number.MAX_VALUE;
+
+    for (const coin of coins) {
+      if (coin <= amount) {
+        change = Math.min(change, makeChange(amount - coin) + 1);
+      }
+    }
+    cache[amount] = change;
+    return change;
+  };
+  const result = makeChange(amount);
+  return result;
+};
+
+const coins = [1, 2, 5];
+const amount = 11;
+console.log(coinChange(coins, amount));
