@@ -28,7 +28,20 @@ Constraints:
     1 <= n <= 103
     1 <= names[i].length <= 20
     1 <= heights[i] <= 105
-    names[i] consists of lower and upper case English letters.
+    names[i] consists of lower and upper case Engconsole.log()lish letters.
     All the values of heights are distinct.
 */
-const sortPeople = (names: string[], heights: number[]): string[] => {}
+const sortPeople = (names: string[], heights: number[]): string[] => {
+	const people: [string, number][] = [];
+
+	for (let i = 0; i < names.length; i++) {
+		people.push([names[i], heights[i]]);
+	}
+	people.sort((a: [string, number], b: [string, number]) => b[1] - a[1]);
+
+	return people.map(person => person[0]);
+};
+const names = ['Alice', 'Bob', 'Bob'];
+const heights = [155, 185, 150];
+
+console.log(sortPeople(names, heights));
