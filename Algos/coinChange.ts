@@ -37,7 +37,7 @@ Constraints:
 const coinChange = (coins: number[], amount: number): number => {
   const cache = {};
 
-  const makeChange = (amount: number): number => {
+  const makeChange = (amount: number) => {
     if (cache[amount]) return cache[amount];
     if (!amount) return 0;
 
