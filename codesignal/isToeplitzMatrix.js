@@ -35,4 +35,16 @@ Follow up:
     What if the matrix is so large that you can only load up a partial row into the memory at once?
 */
 
-const isToeplitzMatrix = matrix => {};
+const isToeplitzMatrix = matrix => {
+	const rows = matrix.length;
+	const cols = matrix[0].length;
+
+	for (let row = 0; row < rows; row++) {
+		for (let col = 0; col < cols; col++) {
+			if (matrix[row - 1][col - 1] !== matrix[row][col]) {
+				return false;
+			}
+		}
+	}
+	return true;
+};
