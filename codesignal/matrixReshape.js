@@ -33,4 +33,17 @@ Constraints:
     1 <= r, c <= 300
 */
 
-const matrixReshape = (mat, r, c) => {};
+const matrixReshape = (mat, r, c) => {
+	const flat = mat.flat();
+
+	return flat.length !== r * c ? mat : [...Array(r)].map(_ => flat.splice(c, 0));
+};
+
+const mat = [
+	[1, 2],
+	[3, 4]
+];
+const r = 2;
+const c = 4;
+
+console.log(matrixReshape(mat, r, c));
