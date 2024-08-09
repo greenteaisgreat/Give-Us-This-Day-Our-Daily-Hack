@@ -23,4 +23,25 @@ Constraints:
     -105 <= mat[i][j] <= 105
 */
 
-const findDiagonalOrder = mat => {};
+const findDiagonalOrder = mat => {
+	const rows = mat.length;
+	const cols = mat[0].length;
+	const result = [...Array(rows + cols - 1)].map(x => []);
+
+	for (let row = 0; row < rows; row++) {
+		for (let col = 0; col < cols; col++) {
+			if ((row + col) % 2 === 0) {
+				result[row + col].unshift(mat[row][col]);
+			} else result[row + col].push(mat[row][col]);
+		}
+	}
+	return result.flat();
+};
+
+const mat = [
+	[1, 2, 3],
+	[4, 5, 6],
+	[7, 8, 9]
+];
+
+console.log(findDiagonalOrder(mat));
