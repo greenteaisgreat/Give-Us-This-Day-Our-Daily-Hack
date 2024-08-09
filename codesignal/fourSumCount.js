@@ -31,9 +31,4 @@ Constraints:
     -228 <= nums1[i], nums2[i], nums3[i], nums4[i] <= 228
 */
 
-const fourSumCount = (
-  nums1: number[],
-  nums2: number[],
-  nums3: number[],
-  nums4: number[]
-): number => {};
+const fourSumCount = (nums1, nums2, nums3, nums4) => {};

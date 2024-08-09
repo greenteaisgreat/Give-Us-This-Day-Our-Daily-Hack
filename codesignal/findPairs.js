@@ -40,4 +40,4 @@ Constraints:
     0 <= k <= 107
 */
 
-const findPairs = (nums: number[], k: number): number => {};
+const findPairs = (nums, k) => {};

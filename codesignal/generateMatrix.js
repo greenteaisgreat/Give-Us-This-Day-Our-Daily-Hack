@@ -18,4 +18,4 @@ Constraints:
     1 <= n <= 20
 */
 
-const generateMatrix = (n: number): number[][] => {};
+const generateMatrix = n => {};

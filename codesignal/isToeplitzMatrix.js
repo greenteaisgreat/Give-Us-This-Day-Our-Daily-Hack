@@ -35,4 +35,4 @@ Follow up:
     What if the matrix is so large that you can only load up a partial row into the memory at once?
 */
 
-const isToeplitzMatrix = (matrix: number[][]): boolean => {};
+const isToeplitzMatrix = matrix => {};

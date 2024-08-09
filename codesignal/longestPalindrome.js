@@ -43,4 +43,4 @@ Constraints:
     words[i] consists of lowercase English letters.
 */
 
-const longestPalindrome = (words: string[]): number => {};
+const longestPalindrome = words => {};

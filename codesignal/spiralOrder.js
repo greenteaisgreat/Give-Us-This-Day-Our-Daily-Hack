@@ -21,4 +21,4 @@ Constraints:
     -100 <= matrix[i][j] <= 100
 */
 
-const spiralOrder = (matrix: number[][]): number[] => {};
+const spiralOrder = matrix => {};
