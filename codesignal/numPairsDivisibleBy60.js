@@ -28,4 +28,4 @@ Constraints:
     1 <= time[i] <= 500
 */
 
-const numPairsDivisibleBy60 = (time: number[]): number => {};
+const numPairsDivisibleBy60 = (time) => {};

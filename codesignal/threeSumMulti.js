@@ -41,4 +41,4 @@ Constraints:
     0 <= target <= 300
 */
 
-const threeSumMulti = (arr: number[], target: number): number => {};
+const threeSumMulti = (arr, target) => {};

@@ -31,4 +31,4 @@ Constraints:
     1 <= k <= nums.length
 */
 
-const numberOfSubarrays = (nums: number[], k: number): number => {};
+const numberOfSubarrays = (nums, k) => {};

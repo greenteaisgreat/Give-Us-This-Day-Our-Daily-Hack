@@ -29,4 +29,4 @@ Constraints:
     -105 <= arr[i] <= 105
 */
 
-const canReorderDoubled = (arr: number[]): boolean => {};
+const canReorderDoubled = (arr) => {};

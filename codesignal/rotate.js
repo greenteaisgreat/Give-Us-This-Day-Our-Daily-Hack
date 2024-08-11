@@ -25,4 +25,4 @@ Constraints:
     -1000 <= matrix[i][j] <= 1000
 */
 
-const rotate = (matrix: number[][]): void => {};
+const rotate = (matrix) => {};

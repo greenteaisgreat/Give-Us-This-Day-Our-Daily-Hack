@@ -23,4 +23,4 @@ Constraints:
     -105 <= mat[i][j] <= 105
 */
 
-const findDiagonalOrder = (mat: number[][]): number[] => {};
+const findDiagonalOrder = (mat) => {};

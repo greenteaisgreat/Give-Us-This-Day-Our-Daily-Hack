@@ -67,4 +67,4 @@ Constraints:
     words[i].length <= maxWidth
 */
 
-const fullJustify = (words: string[], maxWidth: number): string[] => {};
+const fullJustify = (words, maxWidth) => {};

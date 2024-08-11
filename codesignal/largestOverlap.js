@@ -42,4 +42,4 @@ Constraints:
     img2[i][j] is either 0 or 1.
 */
 
-const largestOverlap = (img1: number[][], img2: number[][]): number => {};
+const largestOverlap = (img1, img2) => {};

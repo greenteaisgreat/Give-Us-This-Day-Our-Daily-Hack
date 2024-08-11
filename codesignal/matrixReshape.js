@@ -33,4 +33,4 @@ Constraints:
     1 <= r, c <= 300
 */
 
-const matrixReshape = (mat: number[][], r: number, c: number): number[][] => {};
+const matrixReshape = (mat, r, c) => {};

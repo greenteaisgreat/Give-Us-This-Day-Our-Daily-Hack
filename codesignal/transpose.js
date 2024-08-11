@@ -25,4 +25,4 @@ Constraints:
     -109 <= matrix[i][j] <= 109
 */
 
-const transpose = (matrix: number[][]): number[][] => {};
+const transpose = (matrix) => {};
