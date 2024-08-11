@@ -25,4 +25,25 @@ Constraints:
     -109 <= matrix[i][j] <= 109
 */
 
-const transpose = matrix => {};
+const transpose = (matrix) => {
+  const rows = matrix.length;
+  const cols = matrix[0].length;
+  const result = [];
+
+  for (let i = 0; i < cols; i++) {
+    const temp = [];
+    for (let j = 0; j < rows; j++) {
+      temp.push(matrix[j][i]);
+    }
+    result.push(temp);
+  }
+  return result;
+};
+
+const matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+
+console.log(transpose(matrix));
