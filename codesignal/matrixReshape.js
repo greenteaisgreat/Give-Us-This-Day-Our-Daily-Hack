@@ -34,14 +34,16 @@ Constraints:
 */
 
 const matrixReshape = (mat, r, c) => {
-	const flat = mat.flat();
+  const flat = mat.flat();
 
-	return flat.length !== r * c ? mat : [...Array(r)].map(_ => flat.splice(c, 0));
+  return flat.length !== r * c
+    ? mat
+    : [...Array(r)].map(() => flat.splice(c, 0));
 };
 
 const mat = [
-	[1, 2],
-	[3, 4]
+  [1, 2],
+  [3, 4],
 ];
 const r = 2;
 const c = 4;
