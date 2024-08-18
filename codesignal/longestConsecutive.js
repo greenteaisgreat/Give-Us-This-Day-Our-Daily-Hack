@@ -23,8 +23,4 @@ Constraints:
     -109 <= nums[i] <= 109
 */
 
-<<<<<<< HEAD
-const longestConsecutive = nums => {};
-=======
 const longestConsecutive = (nums) => {};
->>>>>>> ac8fa561b96663301f38b58b486b212f72d50ea5

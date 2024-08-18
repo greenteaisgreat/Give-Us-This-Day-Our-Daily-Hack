@@ -18,7 +18,6 @@ Constraints:
     1 <= n <= 20
 */
 
-<<<<<<< HEAD
 const generateMatrix = (n) => {
   const result = [...Array(n)].map((x) => []);
   const half = Math.ceil(n / 2);
@@ -46,6 +45,3 @@ const generateMatrix = (n) => {
 };
 
 console.log(generateMatrix(3));
-=======
-const generateMatrix = (n) => {};
->>>>>>> ac8fa561b96663301f38b58b486b212f72d50ea5

@@ -43,8 +43,4 @@ Constraints:
     words[i] consists of lowercase English letters.
 */
 
-<<<<<<< HEAD
-const longestPalindrome = words => {};
-=======
 const longestPalindrome = (words) => {};
->>>>>>> ac8fa561b96663301f38b58b486b212f72d50ea5

@@ -21,40 +21,36 @@ Constraints:
     -100 <= matrix[i][j] <= 100
 */
 
-<<<<<<< HEAD
-const spiralOrder = matrix => {
-	let rows = matrix.length;
-	let cols = matrix[0].length;
-	let row = 0;
-	let col = -1;
-	let direction = 1;
-	const result = [];
+const spiralOrder = (matrix) => {
+  let rows = matrix.length;
+  let cols = matrix[0].length;
+  let row = 0;
+  let col = -1;
+  let direction = 1;
+  const result = [];
 
-	while (rows > 0 && cols > 0) {
-		for (let i = 0; i < cols; i++) {
-			col += direction;
-			result.push(matrix[row][col]);
-		}
-		rows--;
+  while (rows > 0 && cols > 0) {
+    for (let i = 0; i < cols; i++) {
+      col += direction;
+      result.push(matrix[row][col]);
+    }
+    rows--;
 
-		for (let i = 0; i < rows; i++) {
-			row += direction;
-			result.push(matrix[row][col]);
-		}
-		cols--;
+    for (let i = 0; i < rows; i++) {
+      row += direction;
+      result.push(matrix[row][col]);
+    }
+    cols--;
 
-		direction *= -1;
-	}
-	return result;
+    direction *= -1;
+  }
+  return result;
 };
 
 const matrix = [
-	[1, 2, 3],
-	[4, 5, 6],
-	[7, 8, 9]
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
 ];
 
 console.log(spiralOrder(matrix));
-=======
-const spiralOrder = (matrix) => {};
->>>>>>> ac8fa561b96663301f38b58b486b212f72d50ea5

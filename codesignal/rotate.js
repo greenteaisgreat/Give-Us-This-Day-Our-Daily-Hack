@@ -25,28 +25,24 @@ Constraints:
     -1000 <= matrix[i][j] <= 1000
 */
 
-<<<<<<< HEAD
-const rotate = matrix => {
-	const n = matrix.length;
+const rotate = (matrix) => {
+  const n = matrix.length;
 
-	for (let i = 0; i < n; i++) {
-		for (let j = 0; j < i; j++) {
-			[matrix[i][j], matrix[j][i]] = [matrix[j][i], matrix[i][j]];
-		}
-	}
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < i; j++) {
+      [matrix[i][j], matrix[j][i]] = [matrix[j][i], matrix[i][j]];
+    }
+  }
 
-	matrix.forEach((_, i) => matrix[i].reverse());
+  matrix.forEach((_, i) => matrix[i].reverse());
 
-	return matrix;
+  return matrix;
 };
 
 const matrix = [
-	[1, 2, 3],
-	[4, 5, 6],
-	[7, 8, 9]
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
 ];
 
 console.log(rotate(matrix));
-=======
-const rotate = (matrix) => {};
->>>>>>> ac8fa561b96663301f38b58b486b212f72d50ea5
