@@ -29,4 +29,8 @@ Constraints:
     -105 <= arr[i] <= 105
 */
 
+<<<<<<< HEAD
 const canReorderDoubled = arr => {};
+=======
+const canReorderDoubled = (arr) => {};
+>>>>>>> ac8fa561b96663301f38b58b486b212f72d50ea5

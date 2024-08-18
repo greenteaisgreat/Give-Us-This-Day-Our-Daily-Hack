@@ -21,6 +21,7 @@ Constraints:
     -100 <= matrix[i][j] <= 100
 */
 
+<<<<<<< HEAD
 const spiralOrder = matrix => {
 	let rows = matrix.length;
 	let cols = matrix[0].length;
@@ -54,3 +55,6 @@ const matrix = [
 ];
 
 console.log(spiralOrder(matrix));
+=======
+const spiralOrder = (matrix) => {};
+>>>>>>> ac8fa561b96663301f38b58b486b212f72d50ea5

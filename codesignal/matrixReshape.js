@@ -33,6 +33,7 @@ Constraints:
     1 <= r, c <= 300
 */
 
+<<<<<<< HEAD
 const matrixReshape = (mat, r, c) => {
   const flat = mat.flat();
 
@@ -49,3 +50,6 @@ const r = 2;
 const c = 4;
 
 console.log(matrixReshape(mat, r, c));
+=======
+const matrixReshape = (mat, r, c) => {};
+>>>>>>> ac8fa561b96663301f38b58b486b212f72d50ea5

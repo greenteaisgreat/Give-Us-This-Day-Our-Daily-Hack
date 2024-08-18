@@ -23,6 +23,7 @@ Constraints:
     -105 <= mat[i][j] <= 105
 */
 
+<<<<<<< HEAD
 const findDiagonalOrder = mat => {
 	const rows = mat.length;
 	const cols = mat[0].length;
@@ -45,3 +46,6 @@ const mat = [
 ];
 
 console.log(findDiagonalOrder(mat));
+=======
+const findDiagonalOrder = (mat) => {};
+>>>>>>> ac8fa561b96663301f38b58b486b212f72d50ea5

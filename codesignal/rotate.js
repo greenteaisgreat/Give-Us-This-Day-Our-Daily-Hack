@@ -25,6 +25,7 @@ Constraints:
     -1000 <= matrix[i][j] <= 1000
 */
 
+<<<<<<< HEAD
 const rotate = matrix => {
 	const n = matrix.length;
 
@@ -46,3 +47,6 @@ const matrix = [
 ];
 
 console.log(rotate(matrix));
+=======
+const rotate = (matrix) => {};
+>>>>>>> ac8fa561b96663301f38b58b486b212f72d50ea5

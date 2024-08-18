@@ -35,6 +35,7 @@ Follow up:
     What if the matrix is so large that you can only load up a partial row into the memory at once?
 */
 
+<<<<<<< HEAD
 const isToeplitzMatrix = matrix => {
 	const rows = matrix.length;
 	const cols = matrix[0].length;
@@ -48,3 +49,6 @@ const isToeplitzMatrix = matrix => {
 	}
 	return true;
 };
+=======
+const isToeplitzMatrix = (matrix) => {};
+>>>>>>> ac8fa561b96663301f38b58b486b212f72d50ea5

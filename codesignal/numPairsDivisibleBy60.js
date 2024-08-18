@@ -28,4 +28,8 @@ Constraints:
     1 <= time[i] <= 500
 */
 
+<<<<<<< HEAD
 const numPairsDivisibleBy60 = time => {};
+=======
+const numPairsDivisibleBy60 = (time) => {};
+>>>>>>> ac8fa561b96663301f38b58b486b212f72d50ea5
