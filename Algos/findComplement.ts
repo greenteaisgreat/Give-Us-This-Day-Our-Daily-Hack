@@ -29,4 +29,16 @@ Constraints:
     1 <= num < 231
 */
 
-const findComplement = (num: number): number => {};
+const findComplement = (num: number): number => {
+	let bin = num.toString(2);
+	let res = '';
+
+	for (const num of bin) {
+		if (num === '1') res += '0';
+		if (num === '0') res += '1';
+	}
+
+	return parseInt(res, 2);
+};
+
+console.log(findComplement(5));
