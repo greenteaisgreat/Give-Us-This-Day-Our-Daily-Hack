@@ -30,4 +30,20 @@ Constraints:
 Follow up: Could you come up with a one-pass algorithm using only constant extra space?
 */
 
-const sortColors = (nums: number[]): void => {};
+const sortColors = (nums: number[]): void => {
+	for (let i = 0; i < nums.length; i++) {
+		for (let j = 0; j < nums.length - 1 - i; j++) {
+			if (nums[j] > nums[j + 1]) {
+				const temp = nums[j];
+				nums[j] = nums[j + 1];
+				nums[j + 1] = temp;
+			}
+		}
+	}
+};
+
+const arr = [12, 56, 1, 9, 56, 43, 9, 2, 70, 93];
+
+sortColors(arr);
+
+console.log(arr);
