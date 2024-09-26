@@ -33,4 +33,20 @@ Constraints:
     All the words in s1 and s2 are separated by a single space.
 */
 
-const uncommonFromSentences = (s1: string, s2: string): string[] => {};
+const uncommonFromSentences = (s1: string, s2: string): string[] => {
+	const strArr = s1.split(' ').concat(s2.split(' '));
+	const wordObj = {};
+	const res: string[] = [];
+
+	for (const str of strArr) {
+		wordObj[str] ? wordObj[str]++ : (wordObj[str] = 1);
+	}
+
+	const wordArr = Object.entries(wordObj);
+
+	for (const [word, freq] of wordArr) {
+		if (freq === 1) res.push(word);
+	}
+
+	return res;
+};
