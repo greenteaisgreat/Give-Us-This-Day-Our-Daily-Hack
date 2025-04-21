@@ -20,7 +20,8 @@ Example 2:
 
 Input: nums = [1,2,3,4], k = 1
 Output: 0
-Explanation: Since no value in nums is repeated, there are no pairs (i,j) that meet all the requirements.
+Explanation: Since no value in nums is repeated, there are no pairs (i,j) 
+that meet all the requirements.
 
 
 Constraints:
@@ -34,4 +35,20 @@ Constraints:
  * @param {number} k
  * @return {number}
  */
-function countPairs(nums: number[], k: number): number {}
+function countPairs(nums: number[], k: number): number {
+  let count = 0;
+
+  for (let i = 0; i < nums.length - 1; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      if (nums[i] === nums[j] && (i * j) % 2 === 0) {
+        count++;
+      }
+    }
+  }
+  return count;
+}
+
+const nums = [3, 1, 2, 2, 2, 1, 3];
+const k = 2;
+
+console.log(countPairs(nums, k));
