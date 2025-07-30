@@ -52,4 +52,10 @@ Constraints:
   word consists of English uppercase and lowercase letters, digits, '@', '#', and '$'.
 */
 
-function validWord(word: string): Boolean {}
+function validWord(word: string): Boolean {
+  return (
+    /[aeiou]/.test(word) &&
+    /^[\w]+$/.test(word) &&
+    /[b-df-h-j-np-tv-z]/gi.test(word)
+  );
+}
