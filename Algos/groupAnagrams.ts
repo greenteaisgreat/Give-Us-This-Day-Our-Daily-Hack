@@ -24,4 +24,17 @@ Example 3:
 Input: strs = [""]
 */
 
-function groupAnagrams(strs: string[]): string[][] {}
+function groupAnagrams(strs: string[]): string[][] {
+  const strCache: Record<string, string[]> = {};
+
+  for (const str of strs) {
+    const sortStr = str.split("").sort().join("");
+
+    if (!strCache[sortStr]) {
+      strCache[sortStr] = [];
+    }
+    strCache[sortStr].push(str);
+  }
+
+  return Object.values(strCache);
+}
