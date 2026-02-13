@@ -46,3 +46,5 @@ Output: false
 
 Explanation: There are two 1's in the top-left 3x3 sub-box.
 */
+
+function validSudoku(board: string[][]): boolean {}
