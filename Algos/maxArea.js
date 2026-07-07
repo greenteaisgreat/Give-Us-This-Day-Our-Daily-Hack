@@ -9,16 +9,16 @@ Return the maximum amount of water a container can store.
 
 Notice that you may not slant the container.
 
- 
+
 
 Example 1:
 
 
 
-     | | _____________________| |_________
-     | |  5     5     5     5 | | 5     5 | |  == 30
-     | |    | |         | |   | |         | |
-     | |    | |   | |   | |   | |   | |   | |
+| | _____________________| |_________
+| |  5     5     5     5 | | 5     5| |  == 30
+| |  | |          | |   | |         | |
+| |  | |    | |   | |   | |   | |   | |
 | |  | |    | |   | |   | |   | |   | |   | |
 | |  | |    | |   | |   | |   | |   | |   | |
 ----------------------------------------------
@@ -43,10 +43,11 @@ Constraints:
 */
 
 /**
- * 
- * @param {number[]} height 
+ *
+ * @param {number[]} height
  * @returns {number}
  */
+<<<<<<< HEAD
 
 //Brute Force Method
 const maxArea = (height) => {
@@ -90,3 +91,6 @@ console.timeEnd(maxArea(height));
 
 console.time(maxAreaFast(height));
 console.timeEnd(maxAreaFast(height));
+=======
+const maxArea = height => {};
+>>>>>>> 59d451f9572e12067b6f890d82e3c4eb72405cb8
