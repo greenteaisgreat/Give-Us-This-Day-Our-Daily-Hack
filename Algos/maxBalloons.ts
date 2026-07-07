@@ -23,4 +23,30 @@ Output: 0
 
 */
 
-function maxNumberOfBalloons(text: string): number {}
+function maxNumberOfBalloons(text: string): number {
+  const balloonObj: Record<string, number> = {
+    b: 0,
+    a: 0,
+    l: 0,
+    o: 0,
+    n: 0,
+  };
+
+  for (const letter of text) {
+    if (letter in balloonObj) {
+      balloonObj[letter]++;
+    }
+  }
+
+  return Math.min(
+    balloonObj.b,
+    balloonObj.a,
+    Math.floor(balloonObj.l / 2),
+    Math.floor(balloonObj.o / 2),
+    balloonObj.n,
+  );
+}
+
+const text = "loonbalxballpoon";
+
+console.log(maxNumberOfBalloons(text));
