@@ -34,4 +34,18 @@ Explanation: Each of the patterns appears as a substring in word "ab".
 
 */
 
-function numOfStrings(patterns: string[], word: string): number {}
+function numOfStrings(patterns: string[], word: string): number {
+  let patternCount = 0;
+
+  for (const pattern of patterns) {
+    if (word.includes(pattern)) {
+      patternCount++;
+    }
+  }
+  return patternCount;
+}
+
+const patterns = ["a", "abc", "bc", "d"];
+const word = "abc";
+
+console.log(numOfStrings(patterns, word));
