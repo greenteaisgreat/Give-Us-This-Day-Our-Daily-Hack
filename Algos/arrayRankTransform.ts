@@ -30,5 +30,25 @@ Output: [5,3,4,2,8,6,7,1,3]
 */
 
 function arrayRankTransform(arr: number[]): number[] {
-  const sortedArr = a;
+  const sortedArr = [...arr].sort((a, b) => a - b);
+
+  const rankObj: Record<number, number> = {};
+  const rankArr: number[] = [];
+  let rank = 1;
+
+  for (const num of sortedArr) {
+    if (!(num in rankObj)) {
+      rankObj[num] = rank++;
+    }
+  }
+
+  for (const num of arr) {
+    rankArr.push(rankObj[num]);
+  }
+
+  return rankArr;
 }
+
+const arr = [40, 10, 20, 30];
+
+console.log(arrayRankTransform(arr));
