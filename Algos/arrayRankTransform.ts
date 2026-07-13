@@ -29,4 +29,6 @@ Output: [5,3,4,2,8,6,7,1,3]
 
 */
 
-function arrayRankTransform(arr: number[]): {};
+function arrayRankTransform(arr: number[]): number[] {
+  const sortedArr = a;
+}
