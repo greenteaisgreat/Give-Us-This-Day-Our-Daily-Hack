@@ -44,4 +44,12 @@ Explanation:
 
 */
 
-function maxProduct(n: number): number {}
+function maxProduct(n: number): number {
+  const sortedN = [...n.toString()].sort((a, b) => Number(b) - Number(a));
+
+  return Number(sortedN[0]) * Number(sortedN[1]);
+}
+
+console.time("maxProduct");
+console.log(maxProduct(12434));
+console.timeEnd("maxProduct");
