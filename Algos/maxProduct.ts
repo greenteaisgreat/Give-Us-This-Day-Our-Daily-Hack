@@ -41,7 +41,6 @@ Explanation:
     The digits of n are [1, 2, 4].
     The possible products of any two digits are: 1 * 2 = 2, 1 * 4 = 4, 2 * 4 = 8.
     The maximum product is 8.
-
 */
 
 function maxProduct(n: number): number {}
