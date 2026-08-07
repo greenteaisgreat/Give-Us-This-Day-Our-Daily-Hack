@@ -29,4 +29,20 @@ that satisfies the condition.
 
 */
 
-function smallestNumber(n: number, t: number): number {}
+function smallestNumber(n: number, t: number): number {
+  let isFound = false;
+
+  while (!isFound) {
+    const digitProduct = [...n.toString()].reduce(
+      (acc, num) => Number(num) * acc,
+      1,
+    );
+
+    if (digitProduct % t === 0) {
+      isFound = true;
+    } else {
+      n++;
+    }
+  }
+  return n;
+}
