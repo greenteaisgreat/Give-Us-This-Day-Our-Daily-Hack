@@ -27,4 +27,27 @@ smallest missing integer greater than or equal to the sum of the longest
 sequential prefix.
 */
 
-function missingInteger(nums: number[]): number {}
+function missingInteger(nums: number[]): number {
+  const numSet = new Set(nums);
+  let missingNo = 0;
+  let isFound = false;
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i + 1] === nums[i] + 1) {
+      missingNo += nums[i];
+      continue;
+    } else {
+      missingNo += nums[i];
+      break;
+    }
+  }
+
+  while (!isFound) {
+    if (numSet.has(missingNo)) {
+      missingNo++;
+      continue;
+    }
+    isFound = true;
+  }
+  return missingNo;
+}
