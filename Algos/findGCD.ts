@@ -34,4 +34,16 @@ The largest number in nums is 3.
 The greatest common divisor of 3 and 3 is 3.
 
 */
-function findGCD(nums: number[]): number {}
+function findGCD(nums: number[]): number {
+  const largestNum = Math.max(...nums);
+  const smallestNum = Math.min(...nums);
+
+  let count = 1000;
+
+  while (count > 0) {
+    if (smallestNum % count === 0 && largestNum % count === 0) {
+      return count;
+    } else count--;
+  }
+  return count;
+}
